@@ -1,0 +1,68 @@
+  <!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv='Content-type' content='text/html; charset=utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
+    <!--TypeKit Fonts-->
+    <script type="text/javascript" src="//use.typekit.net/spi6vmg.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+    <title>Hey! Strategist, Creativity, Data Informed Decisions...</title>
+    <link rel="icon" type="image/ico" href="assets/favicon.ico" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="http://code.jquery.com/jquery-2.1.0.js"></script>
+  </head>
+
+  <!--Body-->
+  <body>
+    <header>
+      <div class="intro">
+        <h1 class="first">I love connecting all the dots</h1>
+        <h1 class="second">Especially the big ones</h1>
+      </div>
+      <a href="#" class="buttons start-stop">pause</a>
+    </header>
+    <div id="container">
+      <canvas id="me-canvas"></canvas>
+      <div class="avatar"><div class="text"><h1></h1></div></div>
+      <canvas id="work-canvas"></canvas>
+    </div>
+    <footer>
+      <!--Javascript-->
+      <script src="js/physicsjs-full-0.5.4.js"></script>
+      <script src="js/mouse-events.js"></script>
+      <script src="js/me.js"></script>
+      <script src="js/work.js"></script>
+
+      <!--Animations-->
+      <script>
+        $( document ).ready(function() {
+            //load canvas after titles have loaded
+            setTimeout(function() {
+              $('.intro .first').fadeIn(1000);
+            }, 600);
+
+            setTimeout(function() {
+              $('.intro .second').fadeIn(1000);
+            }, 1600);
+
+            setTimeout(function() {
+              $('.intro').fadeOut(1000);
+            }, 2800);
+
+            setTimeout(function() {
+              $('.buttons').fadeIn(1400);
+              $('#me-canvas').fadeIn(800);
+              $('#work-canvas').fadeIn(800);
+            }, 3800);
+
+            setTimeout(function() {
+                $('.avatar').fadeIn(1000).css({display:'inline-block'});
+                $('.buttons').fadeIn(1400);
+            }, 5400);
+        });
+      </script>
+    </footer>
+  </body>
+</html>
