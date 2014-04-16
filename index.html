@@ -11,58 +11,96 @@
     <link rel="icon" type="image/ico" href="assets/favicon.ico" />
 
     <link rel="stylesheet" href="css/style.css" />
-    <script src="http://code.jquery.com/jquery-2.1.0.js"></script>
   </head>
 
   <!--Body-->
   <body>
     <header>
-      <div class="intro">
+      <!-- <div class="intro">
         <h1 class="first">I love connecting all the dots</h1>
         <h1 class="second">Especially the big ones</h1>
-      </div>
+      </div> -->
+      <div class="name">Zac Rolland</div>
       <a href="#" class="buttons start-stop">pause</a>
     </header>
-    <div id="container">
-      <canvas id="me-canvas"></canvas>
-      <div class="avatar"><div class="text"><h1></h1></div></div>
-      <canvas id="work-canvas"></canvas>
+    <div class="container">
+
+      <section id="me-canvas">
+        <div class="dot-element-me big">
+          <h1 class="title">Me</h1>
+        </div>
+        <div class="dot-element-me small">
+          <h1 class="hover-state" id="curiosity">Curiosity</h1>
+        </div>
+        <div class="dot-element-me small">
+          <h1 class="hover-state" id="drive">Drive</h1>
+        </div>
+        <div class="dot-element-me small">
+          <h1 class="hover-state" id="creativity">Creativity</h1>
+        </div>
+      </section>
+
+      <section id="work-canvas">
+        <div class="dot-element-work big">
+          <h1 class="title">Work</h1>
+        </div>
+        <div class="dot-element-work small">
+          <h1 class="hover-state" id="lego">LEGO</h1>
+        </div>
+        <div class="dot-element-work small">
+          <h1 class="hover-state" id="coke">Coca-Cola</h1>
+        </div>
+        <div class="dot-element-work small">
+          <h1 class="hover-state" id="halebop">Halebop</h1>
+        </div>
+      </section>
+
+      <section class="content">
+        <div class="work-content">
+          <div class="work-content-title"><h1>Work</h1><br><h1>Coming Soon!</h1></div>
+        </div>
+        <div class="me-content">
+          <div class="me-content-title"><h1>Me</h1><br><h1>Coming Soon!</h1></div>
+        </div>
+      </section>
     </div>
     <footer>
       <!--Javascript-->
+      <script src="http://code.jquery.com/jquery-2.1.0.js"></script>
       <script src="js/physicsjs-full-0.5.4.js"></script>
+      <script src="js/easing.js"></script>
       <script src="js/mouse-events.js"></script>
       <script src="js/me.js"></script>
       <script src="js/work.js"></script>
 
       <!--Animations-->
       <script>
-        $( document ).ready(function() {
-            //load canvas after titles have loaded
-            setTimeout(function() {
-              $('.intro .first').fadeIn(1000);
-            }, 600);
+      //   $( document ).ready(function() {
+      //       //load canvas after titles have loaded
+      //       setTimeout(function() {
+      //         $('.intro .first').fadeIn(1000);
+      //       }, 600);
 
-            setTimeout(function() {
-              $('.intro .second').fadeIn(1000);
-            }, 1600);
+      //       setTimeout(function() {
+      //         $('.intro .second').fadeIn(1000);
+      //       }, 1600);
 
-            setTimeout(function() {
-              $('.intro').fadeOut(1000);
-            }, 2800);
+      //       setTimeout(function() {
+      //         $('.intro').fadeOut(1000);
+      //       }, 2800);
 
-            setTimeout(function() {
-              $('.buttons').fadeIn(1400);
-              $('#me-canvas').fadeIn(800);
-              $('#work-canvas').fadeIn(800);
-            }, 3800);
+      //       setTimeout(function() {
+      //         $('.buttons').fadeIn(1400);
+      //         $('#me-canvas').fadeIn(800);
+      //         $('#work-canvas').fadeIn(800);
+      //       }, 3800);
 
-            setTimeout(function() {
-                $('.avatar').fadeIn(1000).css({display:'inline-block'});
-                $('.buttons').fadeIn(1400);
-            }, 5400);
-        });
-      </script>
+      //       setTimeout(function() {
+      //           $('.avatar').fadeIn(1000).css({display:'inline-block'});
+      //           $('.buttons').fadeIn(1400);
+      //       }, 5400);
+      //   });
+      // </script>
     </footer>
   </body>
 </html>

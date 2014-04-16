@@ -8,6 +8,12 @@ Physics(function(world){
   var viewWidth = $win.width()/2;
   var viewHeight = $win.height();
 
+  var isMouseDown = false;
+  var elements = [];
+  var bodies = [];
+  var properties = [];
+  var mouseOnClick = [];
+
   var viewportBounds = Physics.aabb(0, 0, viewWidth, viewHeight);
 
   // constrain objects to these bounds
@@ -17,7 +23,7 @@ Physics(function(world){
       cof: 0.99
   });
 
-  // Play/Pause
+  // play/pause
   $(document).on('click', '.start-stop', function(e){
       e.preventDefault();
       var paused = world.isPaused();
@@ -30,24 +36,16 @@ Physics(function(world){
       }
   });
 
-  var renderer = Physics.renderer('canvas', {
+  // render to dom
+  var renderer = Physics.renderer('dom', {
     el: 'me-canvas',
     width: viewWidth,
     height: viewHeight,
     meta: false, // don't display meta data
-    debug: false,
-    styles: {
-        // set colors for the circle bodies
-        'circle' : {
-          strokeStyle: 'hsla(309, 21%, 24%, 1)',
-          lineWidth: 1,
-          fillStyle: 'hsla(309, 21%, 24%, 1)',
-          angleIndicator: false
-        }
-    }
+    debug: false
   });
 
-  //Resize Window
+  //resize window
   $(window).on('resize', function(){
       viewWidth = $win.width()/2;
       viewHeight = $win.height();
@@ -57,83 +55,69 @@ Physics(function(world){
       renderer.options.height = viewHeight;
       viewportBounds = Physics.aabb(0, 0, viewWidth, viewHeight);
       edgeBounce.setAABB( viewportBounds );
+
+      console.log("left resize "+viewWidth);
   }).trigger('resize');
 
   // add the renderer
   world.add( renderer );
+
   // render on each step
   world.subscribe('step', function(){
     world.render();
   });
 
-  world.add(Physics.behavior('demo-mouse-events', {
-      el: '#me-canvas'
-  }));
+  //get elements
+  elements = getElementsByClass("dot-element-me");
+
+  for ( var i = 0; i < elements.length; i ++ ) {
+    properties[i] = getElementProperties( elements[i] );
+  };
+
+  for ( var i = 0; i < elements.length; i ++ ) {
+    var element = elements[ i ];
 
 
-  // begin
-  var curiosityDot = Physics.body('circle', {
+    element.style.position = 'absolute';
+    element.style.left = ( - properties[i][2]/2) + 'px'; // will be set by renderer
+    element.style.top = ( - properties[i][3]/2) + 'px';
+    element.style.width = properties[i][2] + 'px';
+
+    //mouse event
+    element.addEventListener( 'mousedown', onElementMouseDown, false );
+    element.addEventListener( 'mouseup', onElementMouseUp, false );
+
+    bodies[i] = Physics.body('circle', {
       x: Physics.util.random(60, 400),
       y: Physics.util.random(500),
       radius: 60,
       mass: 1.5,
       vx: 0.25,
-      vy: .1,
-      name: 'curiosity'
-  });
+      vy: .1
+    });
 
-  var driveDot = Physics.body('circle', {
-      x: Physics.util.random(60, 400),
-      y: Physics.util.random(500),
-      radius: 60,
-      mass: 1.5,
-      vx: 0.25,
-      vy: .1,
-      name: 'drive'
-  });
+    bodies[i].view = element;
 
-  var creativityDot = Physics.body('circle', {
-      x: Physics.util.random(60, 400),
-      y: Physics.util.random(500),
-      radius: 60,
-      mass: 1.5,
-      vx: 0.25,
-      vy: .1,
-      name: 'creativity'
-  });
+  };
 
-  var diligenceDot = Physics.body('circle', {
-      x: Physics.util.random(60, 400),
-      y: Physics.util.random(500),
-      radius: 60,
-      mass: 1.5,
-      vx: 0.25,
-      vy: .1,
-      name: 'diligence'
-  });
+  // add the bodies to the world
+  world.add( bodies );
 
-  var passionDot = Physics.body('circle', {
-      x: Physics.util.random(60, 400),
-      y: Physics.util.random(500),
-      radius: 60,
-      mass: 1.5,
-      vx: 0.25,
-      vy: .1,
-      name: 'passion'
-  });
-
-  // add things to world
-  world.add( [curiosityDot, driveDot, creativityDot, diligenceDot, passionDot] );
-
+  // add behaviours
   world.add( edgeBounce );
   world.add( Physics.behavior('body-impulse-response') );
 
   // add gravity
-  world.add( Physics.behavior('constant-acceleration') );
+  // world.add( Physics.behavior('constant-acceleration') );
 
-  // Body Collision
+  // body collision
   world.add( Physics.behavior('body-collision-detection', { checkAll: false }) );
   world.add( Physics.behavior('sweep-prune') );
+
+  // add mouse-events
+  world.add(Physics.behavior('demo-mouse-events', {
+      el: '#me-canvas'
+  }));
 
   // subscribe to ticker to advance the simulation
   Physics.util.ticker.subscribe(function( time, dt ){
@@ -142,5 +126,65 @@ Physics(function(world){
 
   // start the ticker
   Physics.util.ticker.start();
+
+  // utils
+  function onElementMouseDown( event ) {
+    event.preventDefault();
+
+    mouseOnClick[0] = event.clientX;
+    mouseOnClick[1] = event.clientY;
+
+    if ( event.target == document.getElementById( 'curiosity' ) ) {
+      slideContent();
+    }
+    if ( event.target == document.getElementById( 'drive' ) ) {
+      slideContent();
+    }
+    if ( event.target == document.getElementById( 'creativity' ) ) {
+      slideContent();
+    }
+  }
+
+  function slideContent() {
+    $('.me-content').toggleClass('open');
+  };
+
+  function onElementMouseUp( event ) {
+    event.preventDefault();
+  }
+
+  function getElementsByClass( searchClass ) {
+
+    var classElements = [];
+    var els = document.getElementsByTagName('*');
+    var elsLen = els.length
+
+    for (i = 0, j = 0; i < elsLen; i++) {
+
+      var classes = els[i].className.split(' ');
+      for (k = 0; k < classes.length; k++)
+        if ( classes[k] == searchClass )
+          classElements[j++] = els[i];
+    }
+
+    return classElements;
+  }
+
+  function getElementProperties( element ) {
+
+    var x = 0;
+    var y = 0;
+    var width = element.offsetWidth;
+    var height = element.offsetHeight;
+
+    do {
+
+      x += element.offsetLeft;
+      y += element.offsetTop;
+
+    } while ( element = element.offsetParent );
+
+    return [ x, y, width, height ];
+  }
 
 });

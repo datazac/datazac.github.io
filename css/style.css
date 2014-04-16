@@ -34,23 +34,38 @@ header {
   color: #3e313c;
 }
 
-.intro .first {
+/*.intro .first {
   display:none;
 }
 
 .intro .second {
   display:none;
+}*/
+
+.name {
+  /*display:none;*/
+  margin-left: 40px;
+  margin-top: 15px;
+  position:fixed;
+  font-family: "futura-pt",sans-serif;
+  font-weight:700;
+  font-style: italic;
+  font-size: 18px;
+  color: #3e313c;
+  z-index: 3;
 }
+
 .buttons {
-  float:right;
   text-decoration: none;
   z-index: 3;
 }
 
 .start-stop {
-  display:none;
-  margin-right: 30px;
+  /*display:none;*/
+  margin-right: 40px;
   margin-top: 15px;
+  position:fixed;
+  right:10px;
   font-family: "futura-pt",sans-serif;
   font-weight:700;
   font-style: italic;
@@ -58,54 +73,207 @@ header {
   color: #3e313c;
 }
 
-.avatar {
-  display:none;
-  width: 165px;
-  height: 165px;
-  position: fixed;
-  margin-left: -82px;
-  margin-top: 18%;
-  background-size:cover;
-  background-image: url(../assets/me3.jpg);
-  border-radius: 200px;
+.container {
+
+}
+
+/* ------  ME ----- */
+
+#me-canvas {
+  /*display:none;*/
+  position: relative;
+  float: left;
   z-index: 1;
 }
 
-.avatar .text {
-  width: 165px;
-  height: 165px;
-  display:none;
+.dot-element-me {
+  border-radius: 200px;
+  background-color: #3e313c;
+  z-index: 2;
+}
+
+.dot-element-me.big {
+  width: 120px;
+  height: 120px;
+}
+
+.dot-element-me.big .title {
+  width: 120px;
+  height: 120px;
+  /*display:none;*/
   position: fixed;
   border-radius: 200px;
-  background: rgba(0,0,0,.3);
-  padding:0px;
+  padding:20px;
   text-align: center;
 }
 
-.avatar h1 {
-  padding-top: 45px;
+.dot-element-me.big h1 {
   font-family: "futura-pt",sans-serif;
   font-weight:700;
   font-style: italic;
-  font-size: 26px;
+  font-size: 28px;
   color: #fff;
 }
 
-.pjs-meta {
-  display: none;
+.dot-element-me.small {
+  width: 120px;
+  height: 120px;
+  cursor: pointer;
 }
 
-#me-canvas {
-  display:none;
-  position: relative;
-  float: left;
-  z-index: 2;
-
+.hover-state {
+    opacity: 0;
+    border-radius: 200px;
+    width: 120px;
+    height: 120px;
+    margin:0px;
+    padding-top:45px;
+    text-align: center;
 }
+
+.dot-element-me.small h1 {
+  font-family: "futura-pt",sans-serif;
+  font-weight:700;
+  font-style: italic;
+  font-size: 20px;
+  color: #fff;
+}
+
+.dot-element-me.small:hover > .hover-state {
+    opacity: 1;
+    transition: opacity 0.1s ease-in;
+}
+
+.me-content {
+  width:50%;
+  height:100%;
+  left:100%;
+  display:initial;
+  position:fixed;
+  float:right;
+  background-color: #fff;
+  text-align: center;
+  z-index: 5;
+  transition: 0.8s ease-out;
+}
+
+.me-content.open {
+  left: 50%;
+  transition: 0.8s ease-in;
+}
+
+.me-content-title {
+  width:100%;
+  height:100%;
+  margin-top: 25%;
+}
+
+.me-content-title h1 {
+  font-family: "futura-pt",sans-serif;
+  font-weight:700;
+  font-style: italic;
+  font-size: 30px;
+  color: #3e313c;
+}
+
+/* ------  WORK ----- */
 
 #work-canvas {
-  display:none;
+/*  display:none;*/
   position: relative;
   float: right;
+  z-index: 1;
+}
+
+.dot-element-work {
+  border-radius: 200px;
+  background-color: #86E2D5;
   z-index: 2;
+}
+
+.dot-element-work.big {
+  width: 120px;
+  height: 120px;
+}
+
+.dot-element-work.big .title {
+  width: 120px;
+  height: 120px;
+  /*display:none;*/
+  position: fixed;
+  border-radius: 200px;
+  padding:20px;
+  text-align: center;
+}
+
+.dot-element-work.big h1 {
+  font-family: "futura-pt",sans-serif;
+  font-weight:700;
+  font-style: italic;
+  font-size: 28px;
+  color: #fff;
+}
+
+.dot-element-work.small {
+  width: 120px;
+  height: 120px;
+  cursor: pointer;
+}
+
+.dot-element-work.small h1 {
+  font-family: "futura-pt",sans-serif;
+  font-weight:700;
+  font-style: italic;
+  font-size: 20px;
+  color: #fff;
+}
+
+.dot-element-work.small:hover > .hover-state {
+    opacity: 1;
+    transition: opacity 0.1s ease-in;
+}
+
+.work-content {
+  width:50%;
+  height:100%;
+  right:100%;
+  display:block;
+  position:fixed;
+  float:left;
+  background-color: #fff;
+  text-align: center;
+  z-index: 5;
+  transition: 0.8s ease-out;
+}
+
+.work-content.open {
+  right:50%;
+  transition: 0.8s ease-in;
+}
+
+.work-content-title {
+  width:100%;
+  height:100%;
+  margin-top: 25%;
+}
+
+.work-content-title h1 {
+  font-family: "futura-pt",sans-serif;
+  font-weight:700;
+  font-style: italic;
+  font-size: 30px;
+  color: #86E2D5;
+}
+
+
+
+
+
+
+
+/*****/
+
+
+.pjs-meta {
+  display: none;
 }

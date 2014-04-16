@@ -28,36 +28,11 @@ Physics.behavior('demo-mouse-events', function (parent) {
                         // remember the mouse offset
                         self.offset.clone(self.mousePos).vsub(body.state.pos);
 
-                        //Add trait or work to avatar
-                        $('.avatar .text').fadeIn(200);
-                        $('.avatar h1').fadeIn(200).html(body.options.name.toUpperCase());
-
                         return;
                     }
 
                     self.mouseDown = true;
                 },
-                // mouseover: function (e) {
-                //     console.log("MOUSEOVER");
-
-                //     var offset = $(this).offset();
-                //     self.mousePos.set(e.pageX - offset.left, e.pageY - offset.top);
-
-                //     var body = self._world.findOne({
-                //         $at: self.mousePos
-                //     });
-                //     if (body) {
-                //         // remember the currently grabbed body
-                //         self.body = body;
-
-                //         //Add trait or work to avatar
-                //         console.log("MOUSEOVER ON BODY");
-
-                //         return;
-                //     }
-
-                //     self.mouseOver = true;
-                // },
                 mousemove: function (e) {
                     var offset = $(this).offset();
                     self.mousePosOld.clone(self.mousePos);
@@ -73,10 +48,6 @@ Physics.behavior('demo-mouse-events', function (parent) {
                     if (self.body) {
                         self.body.fixed = false;
                         self.body = false;
-
-                        // remove trait or work on mouse up
-                        $('.avatar .text').fadeOut(100);
-                        $('.avatar h1').fadeOut(100);
                     }
                     self.mouseDown = false;
                 }
