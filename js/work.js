@@ -45,13 +45,6 @@ Physics(function(world){
     debug: false
   });
 
-  // add the renderer
-  world.add( renderer );
-  // render on each step
-  world.subscribe('step', function(){
-    world.render();
-  });
-
   //resize Window /// DOESN'T WORK
   $(window).on('resize', function(){
       viewWidth = $win.width()/2;
@@ -66,6 +59,13 @@ Physics(function(world){
       console.log("right resize width is " + viewWidth);
       console.log("right resize renderer is " + renderer.el.style.width);
   }).trigger('resize');
+
+  // add the renderer
+  world.add( renderer );
+  // render on each step
+  world.subscribe('step', function(){
+    world.render();
+  });
 
   //get elements
   elements = getElementsByClass("dot-element-work");
