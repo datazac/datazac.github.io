@@ -49,14 +49,13 @@ Physics(function(world){
   $(window).on('resize', function(){
       viewWidth = $win.width()/2;
       viewHeight = $win.height();
-      renderer.el.width = viewWidth;
-      renderer.el.height = viewHeight;
+      renderer.el.style.width = viewWidth;
+      renderer.el.style.height = viewHeight;
       renderer.options.width = viewWidth;
       renderer.options.height = viewHeight;
       viewportBounds = Physics.aabb(0, 0, viewWidth, viewHeight);
       edgeBounce.setAABB( viewportBounds );
 
-      console.log("left resize "+viewWidth);
   }).trigger('resize');
 
   // add the renderer

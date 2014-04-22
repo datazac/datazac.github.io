@@ -8,13 +8,13 @@ Physics(function(world){
   var viewWidth = $win.width()/2;
   var viewHeight = $win.height();
 
+  var viewportBounds = Physics.aabb(0, 0, viewWidth, viewHeight);
+
   var isMouseDown = false;
   var elements = [];
   var bodies = [];
   var properties = [];
   var mouseOnClick = [];
-
-  var viewportBounds = Physics.aabb(0, 0, viewWidth, viewHeight);
 
   // constrain objects to these bounds
   var edgeBounce = Physics.behavior('edge-collision-detection', {
@@ -45,26 +45,27 @@ Physics(function(world){
     debug: false
   });
 
-  //resize Window /// DOESN'T WORK
-  $(window).on('resize', function(){
-      viewWidth = $win.width()/2;
-      viewHeight = $win.height();
-      renderer.el.width = viewWidth;
-      renderer.el.height = viewHeight;
-      renderer.options.width = viewWidth;
-      renderer.options.height = viewHeight;
-      viewportBounds = Physics.aabb(0, 0, viewWidth, viewHeight);
-      edgeBounce.setAABB( viewportBounds );
-
-      console.log("right resize "+renderer.el.width);
-  }).trigger('resize');
-
   // add the renderer
   world.add( renderer );
   // render on each step
   world.subscribe('step', function(){
     world.render();
   });
+
+  //resize Window /// DOESN'T WORK
+  $(window).on('resize', function(){
+      viewWidth = $win.width()/2;
+      viewHeight = $win.height();
+      renderer.el.style.width = viewWidth;
+      renderer.el.style.height = viewHeight;
+      renderer.options.width = viewWidth;
+      renderer.options.height = viewHeight;
+      viewportBounds = Physics.aabb(0, 0, viewWidth, viewHeight);
+      edgeBounce.setAABB( viewportBounds );
+
+      console.log("right resize width is " + viewWidth);
+      console.log("right resize renderer is " + renderer.el.style.width);
+  }).trigger('resize');
 
   //get elements
   elements = getElementsByClass("dot-element-work");
