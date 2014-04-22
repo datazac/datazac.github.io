@@ -7,6 +7,7 @@ Physics(function(world){
   var $win = $(window);
   var viewWidth = $win.width()/2;
   var viewHeight = $win.height();
+  var newWidth;
 
   var viewportBounds = Physics.aabb(0, 0, viewWidth, viewHeight);
 
@@ -56,8 +57,8 @@ Physics(function(world){
       viewportBounds = Physics.aabb(0, 0, viewWidth, viewHeight);
       edgeBounce.setAABB( viewportBounds );
 
-      console.log("right resize width is " + viewWidth);
-      console.log("right resize renderer is " + renderer.el.style.width);
+      console.log("right resize viewWidth is " + viewWidth);
+      console.log("right resize renderer.el.style.width is " + renderer.el.style.width);
   }).trigger('resize');
 
   // add the renderer
