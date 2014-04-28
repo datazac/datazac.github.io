@@ -8,13 +8,13 @@ Physics(function(world){
   var viewWidth = $win.width()/2;
   var viewHeight = $win.height();
 
+  var viewportBounds = Physics.aabb(0, 0, viewWidth, viewHeight);
+
   var isMouseDown = false;
   var elements = [];
   var bodies = [];
   var properties = [];
   var mouseOnClick = [];
-
-  var viewportBounds = Physics.aabb(0, 0, viewWidth, viewHeight);
 
   // constrain objects to these bounds
   var edgeBounce = Physics.behavior('edge-collision-detection', {
@@ -49,20 +49,19 @@ Physics(function(world){
   $(window).on('resize', function(){
       viewWidth = $win.width()/2;
       viewHeight = $win.height();
-      renderer.el.style.width = viewWidth;
-      renderer.el.style.height = viewHeight;
+      renderer.el.style.width = viewWidth + "px";
+      renderer.el.style.height = viewHeight + "px";
       renderer.options.width = viewWidth;
       renderer.options.height = viewHeight;
       viewportBounds = Physics.aabb(0, 0, viewWidth, viewHeight);
       edgeBounce.setAABB( viewportBounds );
-
   }).trigger('resize');
 
   // add the renderer
   world.add( renderer );
 
   // render on each step
-  world.subscribe('step', function(){
+  world.on('step', function () {
     world.render();
   });
 
@@ -87,12 +86,12 @@ Physics(function(world){
     element.addEventListener( 'mouseup', onElementMouseUp, false );
 
     bodies[i] = Physics.body('circle', {
-      x: Physics.util.random(60, 400),
-      y: Physics.util.random(500),
+      x: viewWidth/2,
+      y: 200,
       radius: 60,
       mass: 1.5,
-      vx: 0.25,
-      vy: .1
+      vx: random(-5, 5)/100,
+      vy: 0.15
     });
 
     bodies[i].view = element;
@@ -119,8 +118,8 @@ Physics(function(world){
   }));
 
   // subscribe to ticker to advance the simulation
-  Physics.util.ticker.subscribe(function( time, dt ){
-      world.step( time );
+  Physics.util.ticker.on(function( time ) {
+    world.step( time );
   });
 
   // start the ticker
@@ -133,19 +132,22 @@ Physics(function(world){
     mouseOnClick[0] = event.clientX;
     mouseOnClick[1] = event.clientY;
 
-    if ( event.target == document.getElementById( 'curiosity' ) ) {
+    if ( event.target == document.getElementById( 'me' ) ) {
       slideContent();
     }
-    if ( event.target == document.getElementById( 'drive' ) ) {
-      slideContent();
-    }
-    if ( event.target == document.getElementById( 'creativity' ) ) {
-      slideContent();
-    }
+    // if ( event.target == document.getElementById( 'curiosity' ) ) {
+    //   slideContent();
+    // }
+    // if ( event.target == document.getElementById( 'drive' ) ) {
+    //   slideContent();
+    // }
+    // if ( event.target == document.getElementById( 'creativity' ) ) {
+    //   slideContent();
+    // }
   }
 
   function slideContent() {
-    $('.me-content').toggleClass('open');
+    $('.me-container').toggleClass('open');
   };
 
   function onElementMouseUp( event ) {
@@ -184,6 +186,10 @@ Physics(function(world){
     } while ( element = element.offsetParent );
 
     return [ x, y, width, height ];
+  }
+
+  function random( min, max ){
+    return (Math.random() * (max-min) + min)|0
   }
 
 });

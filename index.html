@@ -3,14 +3,21 @@
   <head>
     <meta http-equiv='Content-type' content='text/html; charset=utf-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
+
     <!--TypeKit Fonts-->
-    <script type="text/javascript" src="//use.typekit.net/spi6vmg.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <!--script type="text/javascript" src="//use.typekit.net/spi6vmg.js"></script-->
+    <!--script type="text/javascript">try{Typekit.load();}catch(e){}</script-->
 
     <title>Hey! Strategist, Creativity, Data Informed Decisions...</title>
     <link rel="icon" type="image/ico" href="assets/favicon.ico" />
 
+    <!--CSS-->
     <link rel="stylesheet" href="css/style.css" />
+
+    <!--React-->
+    <script src="js/build/react.js"></script>
+    <script src="js/build/JSXTransformer.js"></script>
+
   </head>
 
   <!--Body-->
@@ -20,16 +27,16 @@
         <h1 class="first">I love connecting all the dots</h1>
         <h1 class="second">Especially the big ones</h1>
       </div> -->
-      <div class="name">Zac Rolland</div>
-      <a href="#" class="buttons start-stop">pause</a>
+      <p class="name">Zac Rolland</p>
+      <div href="#" class="buttons start-stop">pause</div>
     </header>
     <div class="container">
 
       <section id="me-canvas">
         <div class="dot-element-me big">
-          <h1 class="title">Me</h1>
+          <h1 class="title" id="me">Me</h1>
         </div>
-        <div class="dot-element-me small">
+        <!-- <div class="dot-element-me small">
           <h1 class="hover-state" id="curiosity">Curiosity</h1>
         </div>
         <div class="dot-element-me small">
@@ -37,70 +44,156 @@
         </div>
         <div class="dot-element-me small">
           <h1 class="hover-state" id="creativity">Creativity</h1>
-        </div>
+        </div> -->
       </section>
 
       <section id="work-canvas">
-        <div class="dot-element-work big">
+        <div class="dot-element-work-title">
           <h1 class="title">Work</h1>
         </div>
-        <div class="dot-element-work small">
+        <div class="dot-element-work-row-one">
           <h1 class="hover-state" id="lego">LEGO</h1>
         </div>
-        <div class="dot-element-work small">
+        <div class="dot-element-work-row-one">
           <h1 class="hover-state" id="coke">Coca-Cola</h1>
         </div>
-        <div class="dot-element-work small">
+        <div class="dot-element-work-row-two">
           <h1 class="hover-state" id="halebop">Halebop</h1>
+        </div>
+        <div class="dot-element-work-row-two">
+          <h1 class="hover-state" id="barpass">Barpass</h1>
+        </div>
+        <div class="dot-element-work-row-two">
+          <h1 class="hover-state" id="breathr">Breathr</h1>
+        </div>
+        <div class="dot-element-work-row-three">
+          <h1 class="hover-state" id="screw-sweden">Screw Sweden</h1>
+        </div>
+        <div class="dot-element-work-row-three">
+          <h1 class="hover-state" id="jobbook">Jobbook</h1>
+        </div>
+        <div class="dot-element-work-row-three">
+          <h1 class="hover-state" id="sos-barnbyar">SOS Barnybar</h1>
         </div>
       </section>
 
       <section class="content">
-        <div class="work-content">
-          <div class="work-content-title"><h1>Work</h1><br><h1>Coming Soon!</h1></div>
+
+        <div class="work-container">
+
+          <div id="work-header">
+            <div class="logo"><img id="work-logo" src=""></div>
+
+            <div id="work-legend">
+                <div class="var-container">
+                  <p class="var-dot-title" id="work-var-title-one"></p>
+                  <div class="var-doughnut-container">
+                    <canvas id="work-doughtnut1" width="60" height="60"></canvas>
+                  </div>
+                </div>
+                <div class="var-container">
+                  <p class="var-dot-title" id="work-var-title-two"></p>
+                  <div class="var-doughnut-container">
+                    <canvas id="work-doughtnut2" width="60" height="60"></canvas>
+                  </div>
+                </div>
+                <div class="var-container">
+                  <p class="var-dot-title" id="work-var-title-three"></p>
+                  <div class="var-doughnut-container">
+                    <canvas id="work-doughtnut3" width="60" height="60"></canvas>
+                  </div>
+                </div>
+                <div class="var-container">
+                  <p class="var-dot-title" id="work-var-title-four"></p>
+                  <div class="var-doughnut-container">
+                    <canvas id="work-doughtnut4" width="60" height="60"></canvas>
+                  </div>
+                </div>
+            </div>
+          </div>
+          <div class="work-content">
+            <div class="role">
+              <h1></h1>
+            </div>
+            <div class="xyz-wrap">
+              <div class="xyz left">
+                <p></p>
+              </div>
+              <div class="xyz right">
+                <p></p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="work-image"><img id="work-image" src=""></div>
+
+          <p id="close">close</p>
+
         </div>
-        <div class="me-content">
-          <div class="me-content-title"><h1>Me</h1><br><h1>Coming Soon!</h1></div>
+        <!--End of Work Container-->
+
+        <!--Me Container-->
+        <div class="me-container">
+
+          <div class="me-content">
+            <div class="me-content-title"><h1>Coming Soon!</h1>
+              <br>
+              <div id="contact"><p>zrolland[at]hyperisland.se</p></div>
+            </div>
+          </div>
+
         </div>
+
+
       </section>
+
     </div>
     <footer>
-      <!--Javascript-->
-      <script src="http://code.jquery.com/jquery-2.1.0.js"></script>
-      <script src="js/physicsjs-full-0.5.4.js"></script>
+      <!--Vendor Javascript-->
+      <!-- <script src="http://code.jquery.com/jquery-2.1.0.js"></script> -->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/jquery.animate-colors-min.js"></script>
+      <script src="js/physicsjs-full-0.6.0.min.js"></script>
       <script src="js/easing.js"></script>
+      <script src="js/Chart.js"></script>
       <script src="js/mouse-events.js"></script>
+
+      <!--App JS-->
+      <!-- <script type="text/jsx" src="js/components.js"></script> -->
       <script src="js/me.js"></script>
       <script src="js/work.js"></script>
 
       <!--Animations-->
       <script>
-      //   $( document ).ready(function() {
-      //       //load canvas after titles have loaded
-      //       setTimeout(function() {
-      //         $('.intro .first').fadeIn(1000);
-      //       }, 600);
 
-      //       setTimeout(function() {
-      //         $('.intro .second').fadeIn(1000);
-      //       }, 1600);
+        // $( document ).ready(function() {
 
-      //       setTimeout(function() {
-      //         $('.intro').fadeOut(1000);
-      //       }, 2800);
+        //     //load canvas after titles have loaded
+        //     setTimeout(function() {
+        //       $('.intro .first').fadeIn(1000);
+        //     }, 600);
 
-      //       setTimeout(function() {
-      //         $('.buttons').fadeIn(1400);
-      //         $('#me-canvas').fadeIn(800);
-      //         $('#work-canvas').fadeIn(800);
-      //       }, 3800);
+        //     setTimeout(function() {
+        //       $('.intro .second').fadeIn(1000);
+        //     }, 1600);
 
-      //       setTimeout(function() {
-      //           $('.avatar').fadeIn(1000).css({display:'inline-block'});
-      //           $('.buttons').fadeIn(1400);
-      //       }, 5400);
-      //   });
-      // </script>
+        //     setTimeout(function() {
+        //       $('.intro').fadeOut(1000);
+        //     }, 2800);
+
+        //     setTimeout(function() {
+        //       $('.buttons').fadeIn(1400);
+        //       $('#me-canvas').fadeIn(800);
+        //       $('#work-canvas').fadeIn(800);
+        //     }, 3800);
+
+        //     setTimeout(function() {
+        //         $('.avatar').fadeIn(1000).css({display:'inline-block'});
+        //         $('.buttons').fadeIn(1400);
+        //     }, 5400);
+        // });
+      </script>
     </footer>
   </body>
 </html>

@@ -57,7 +57,7 @@ Physics.behavior('demo-mouse-events', function (parent) {
         connect: function (world) {
 
             // subscribe the .behave() method to the position integration step
-            world.subscribe('integrate:positions', this.behave, this);
+            world.on('integrate:positions', this.behave, this);
         },
 
         disconnect: function (world) {
