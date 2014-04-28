@@ -171,7 +171,7 @@ header {
     content:'';
     top: 5%;
     bottom: 0%;
-    right: 0px;
+    left: 0px;
     width: 1px;
     position: absolute;
     background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(227,224,216,0)), color-stop(20%, #ECF0F1), color-stop(80%, #ECF0F1), color-stop(100%, rgba(227,224,216,0)));
