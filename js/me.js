@@ -125,6 +125,17 @@ Physics(function(world){
   // start the ticker
   Physics.util.ticker.start();
 
+  function slideContent() {
+    $('.me-container').toggleClass('open');
+  };
+
+  // close
+  $('#close-me').click(function() {
+    $('.me-container').removeClass('open');
+  })
+
+
+
   // utils
   function onElementMouseDown( event ) {
     event.preventDefault();
@@ -145,10 +156,6 @@ Physics(function(world){
     //   slideContent();
     // }
   }
-
-  function slideContent() {
-    $('.me-container').toggleClass('open');
-  };
 
   function onElementMouseUp( event ) {
     event.preventDefault();

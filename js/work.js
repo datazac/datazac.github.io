@@ -382,7 +382,7 @@ Physics(function(world){
   };
 
   // close
-  $('#close').click(function() {
+  $('#close-work').click(function() {
     var color = "#B3B8B6";
 
     $('.work-container').removeClass('open');

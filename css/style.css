@@ -207,6 +207,20 @@ header {
   color: #7B7D7C;
 }
 
+#close-me {
+  right: 10px;
+  position: absolute;
+  bottom: 0px;
+  float: right;
+  font-family: "futura-pt",sans-serif;
+  font-weight:700;
+  font-style: normal;
+  font-size: 18px;
+  color: #7B7D7C;
+  text-align: left;
+  cursor: pointer;
+}
+
 /* ------  WORK ----- */
 
 #work-canvas {
@@ -402,7 +416,7 @@ header {
   width: 100%;
 }
 
-#close {
+#close-work {
   margin-left: 10px;
   position: absolute;
   bottom: 0px;
@@ -434,7 +448,43 @@ header {
   }
 }
 
+@media(max-width:720px){
+  .me-container {
+    width:100%;
+    height:100%;
+    left:100%;
+    display:initial;
+    position:fixed;
+    float:right;
+    background-color: #fff;
+    text-align: center;
+    z-index: 5;
+    transition: 0.8s ease-out;
+  }
 
+  .me-container.open {
+    left: 0%;
+    transition: 0.8s ease-in;
+  }
+
+  .work-container {
+    width:100%;
+    height:100%;
+    right:100%;
+    display:block;
+    position:fixed;
+    float:left;
+    background-color: #fff;
+    text-align: center;
+    z-index: 5;
+    transition: 0.8s ease-out;
+  }
+
+  .work-container.open {
+    right:0%;
+    transition: 0.8s ease-in;
+  }
+}
 
 
 
