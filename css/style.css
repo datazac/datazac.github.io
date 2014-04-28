@@ -417,7 +417,22 @@ header {
   width: 100%;
 }
 
-#close-work {
+#close-work-top {
+  display: none;
+  position: absolute;
+  left: 0px;
+  padding: 0.2em;
+  font-family: "futura-pt",sans-serif;
+  font-weight:700;
+  font-style: normal;
+  font-size: 18px;
+  background-color: #000;
+  color: #fff;
+  text-align: left;
+  cursor: pointer;
+}
+
+#close-work-bottom {
   position: absolute;
   bottom: 0px;
   padding: 0.2em;
@@ -458,21 +473,13 @@ header {
     bottom: none;
   }
 
-  #close-work {
-    /*make this fixed*/
-    position: absolute;
-    bottom: 0px;
-    padding: 0.2em;
-    font-family: "futura-pt",sans-serif;
-    font-weight:700;
-    font-style: normal;
-    font-size: 18px;
-    background-color: #000;
-    color: #fff;
-    text-align: left;
-    cursor: pointer;
+  #close-work-top {
+    display: initial;
   }
 
+  #close-work-bottom {
+    display: none;
+  }
 }
 
 @media(max-width:720px){

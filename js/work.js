@@ -382,13 +382,20 @@ Physics(function(world){
   };
 
   // close
-  $('#close-work').click(function() {
+  $('#close-work-bottom').click(function() {
     var color = "#B3B8B6";
 
     $('.work-container').removeClass('open');
 
     dotColor(color);
+  })
 
+  $('#close-work-top').click(function() {
+    var color = "#B3B8B6";
+
+    $('.work-container').removeClass('open');
+
+    dotColor(color);
   })
 
 // Change dot color
@@ -398,7 +405,8 @@ Physics(function(world){
     $('.dot-element-work-row-two').animate({ 'background-color': color }, 400);
     $('.dot-element-work-row-three').animate({ 'background-color': color }, 400);
     $('.start-stop').animate({ 'color': color }, 400);
-    $('#close-work').css('background-color', color);
+    $('#close-work-bottom').css('background-color', color);
+    $('#close-work-top').css('background-color', color);
   };
 
 
