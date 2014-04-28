@@ -265,8 +265,8 @@ Physics(function(world){
         var textRight = "We worked closely with the senior designers at Future labs to create the concept and then at end of the 48 hours, I pitched the concept to a panel including the Future Lab team and on of Lego's VP's. This was an exciting brief which included concept development, design prototyping, defining the user journey, and pitching.";
 
         dotColor(color);
-        workChart(skills, values, color);
         workContent(project, position, textLeft, textRight);
+        workChart(skills, values, color);
         openContent();
     }
     if ( event.target == document.getElementById( 'coke' ) ) {
@@ -280,8 +280,8 @@ Physics(function(world){
         var textRight = "Our concept came in first place out of 38 teams and is actively in development at coke. This brief involved concept development, business strategies, market segmentation, purchase mechanisms, copy-writing, bleeding-edge technologies, and pitching.";
 
         dotColor(color);
-        workChart(skills, values, color);
         workContent(project, position, textLeft, textRight);
+        workChart(skills, values, color);
         openContent();
     }
     if ( event.target == document.getElementById( 'halebop' ) ) {
@@ -295,8 +295,8 @@ Physics(function(world){
         var textRight = "Gathering insights from their marketing data, we created a digital strategy that would improve how they directed potential customer's to their site and acquired customers. The CMO was extremely happy with the results, and is implementing the strategy.";
 
         dotColor(color);
-        workChart(skills, values, color);
         workContent(project, position, textLeft, textRight);
+        workChart(skills, values, color);
         openContent();
     }
     if ( event.target == document.getElementById( 'barpass' ) ) {
@@ -310,8 +310,8 @@ Physics(function(world){
         var textRight = "You go to the app, and you can pick from closest view, browse through all the view locations, or even choose an area of the city and it will give you the closest views. I coded and designed the entire app using javascript with weather, map, and direction's apis. We presented this app at and Stockholm Open Data Exibition.";
 
         dotColor(color);
-        workChart(skills, values, color);
         workContent(project, position, textLeft, textRight);
+        workChart(skills, values, color);
         openContent();
     }
     if ( event.target == document.getElementById( 'breathr' ) ) {
@@ -325,8 +325,8 @@ Physics(function(world){
         var textRight = "You go to the app, and you can pick from closest view, browse through all the view locations, or even choose an area of the city and it will give you the closest views. I coded and designed the entire app using javascript with weather, map, and direction's apis. We presented this app at and Stockholm Open Data Exhibition.";
 
         dotColor(color);
-        workChart(skills, values, color);
         workContent(project, position, textLeft, textRight);
+        workChart(skills, values, color);
         openContent();
     }
     if ( event.target == document.getElementById( 'screw-sweden' ) ) {
@@ -340,8 +340,8 @@ Physics(function(world){
         var textRight = "best for their sex habits, based on real data. The team designed and coded the entire site in 10 days, and we presented then we presented to well regarded data journalist. I managed the team, co-developed the quiz matrix, coded the quiz matrix in the app. As result of this work, I was invited to continue working with module leader, Jans Finnas, on data visualization projects outside of the course.";
 
         dotColor(color);
-        workChart(skills, values, color);
         workContent(project, position, textLeft, textRight);
+        workChart(skills, values, color);
         openContent();
     }
     if ( event.target == document.getElementById( 'jobbook' ) ) {
@@ -355,8 +355,8 @@ Physics(function(world){
         var textRight = "I worked on everything from project management, cold-calling, pitching, running a Wordpress news blog, social media management, and leading a team of more than 50 university ambassadors across North America. This is where I realized to I wanted to work in digital products and that I need to learn some coe and creative tools, and where I was when I first applied for Hyper Island.";
 
         dotColor(color);
-        workChart(skills, values, color);
         workContent(project, position, textLeft, textRight);
+        workChart(skills, values, color);
         openContent();
     }
     if ( event.target == document.getElementById( 'sos-barnbyar' ) ) {
@@ -370,8 +370,8 @@ Physics(function(world){
         var textRight = "I pitched the idea to the SOS Barnbyar team. During this brief I helped develop the concept, prune ideas, and direct the movie's storyboard in order to meet the deadline to do a killer pitch.";
 
         dotColor(color);
-        workChart(skills, values, color);
         workContent(project, position, textLeft, textRight);
+        workChart(skills, values, color);
         openContent();
     }
   }
