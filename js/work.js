@@ -398,6 +398,7 @@ Physics(function(world){
     $('.dot-element-work-row-two').animate({ 'background-color': color }, 400);
     $('.dot-element-work-row-three').animate({ 'background-color': color }, 400);
     $('.start-stop').animate({ 'color': color }, 400);
+    $('#close-work').css('background-color', color);
   };
 
 

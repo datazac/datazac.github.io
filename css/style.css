@@ -153,6 +153,7 @@ header {
   width:50%;
   height:100%;
   left:100%;
+  overflow: auto;
   display:initial;
   position:fixed;
   float:right;
@@ -417,14 +418,14 @@ header {
 }
 
 #close-work {
-  margin-left: 10px;
   position: absolute;
   bottom: 0px;
-  float: left;
+  padding: 0.2em;
   font-family: "futura-pt",sans-serif;
   font-weight:700;
   font-style: normal;
   font-size: 18px;
+  background-color: #000;
   color: #fff;
   text-align: left;
   cursor: pointer;
@@ -443,9 +444,35 @@ header {
 /***********************/
 
 @media(max-width:1330px){
+  .work-container {
+    overflow: auto;
+  }
+
   .logo {
     float: none;
   }
+
+  .work-image {
+    padding-top: 2em;
+    position: static;
+    bottom: none;
+  }
+
+  #close-work {
+    /*make this fixed*/
+    position: absolute;
+    bottom: 0px;
+    padding: 0.2em;
+    font-family: "futura-pt",sans-serif;
+    font-weight:700;
+    font-style: normal;
+    font-size: 18px;
+    background-color: #000;
+    color: #fff;
+    text-align: left;
+    cursor: pointer;
+  }
+
 }
 
 @media(max-width:720px){
