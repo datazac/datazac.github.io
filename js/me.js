@@ -93,7 +93,7 @@ Physics(function(world){
         x: viewWidth/2,
         y: 200,
         radius: 60,
-        mass: 1.5,
+        mass: 1.0,
         vx: random(-5, 5)/100,
         vy: 0.15
       });
@@ -119,7 +119,7 @@ Physics(function(world){
         x: viewWidth/2,
         y: 200,
         radius: 30,
-        mass: 1.5,
+        mass: 1.0,
         vx: random(-5, 5)/100,
         vy: 0.15
       });
