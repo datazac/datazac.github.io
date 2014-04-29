@@ -225,7 +225,7 @@ Physics(function(world){
       title.style.position = 'absolute';
       title.style.left = ( - properties[i][2]/2) + 'px'; // will be set by renderer
       title.style.top = ( - properties[i][3]/2) + 'px';
-      title.style.width = properties[i][2] + 'px';
+      // title.style.width = properties[i][2] + 'px';
 
       //mouse event
       title.addEventListener( 'mousedown', onElementMouseDown, false );
@@ -258,7 +258,7 @@ Physics(function(world){
       rowOne.style.position = 'absolute';
       rowOne.style.left = ( - properties[i][2]/2) + 'px'; // will be set by renderer
       rowOne.style.top = ( - properties[i][3]/2) + 'px';
-      rowOne.style.width = properties[i][2] + 'px';
+      // rowOne.style.width = properties[i][2] + 'px';
 
       //mouse event
       rowOne.addEventListener( 'mousedown', onElementMouseDown, false );
@@ -291,7 +291,7 @@ Physics(function(world){
       rowTwo.style.position = 'absolute';
       rowTwo.style.left = ( - properties[i][2]/2) + 'px'; // will be set by renderer
       rowTwo.style.top = ( - properties[i][3]/2) + 'px';
-      rowTwo.style.width = properties[i][2] + 'px';
+      // rowTwo.style.width = properties[i][2] + 'px';
 
       //mouse event
       rowTwo.addEventListener( 'mousedown', onElementMouseDown, false );
@@ -325,7 +325,7 @@ Physics(function(world){
       rowThree.style.position = 'absolute';
       rowThree.style.left = ( - properties[i][2]/2) + 'px'; // will be set by renderer
       rowThree.style.top = ( - properties[i][3]/2) + 'px';
-      rowThree.style.width = properties[i][2] + 'px';
+      // rowThree.style.width = properties[i][2] + 'px';
 
       //mouse event
       rowThree.addEventListener( 'mousedown', onElementMouseDown, false );

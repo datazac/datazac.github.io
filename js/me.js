@@ -79,11 +79,10 @@ Physics(function(world){
     for ( var i = 0; i < elements.length; i ++ ) {
       var element = elements[ i ];
 
-
       element.style.position = 'absolute';
       element.style.left = ( - properties[i][2]/2) + 'px'; // will be set by renderer
       element.style.top = ( - properties[i][3]/2) + 'px';
-      element.style.width = properties[i][2] + 'px';
+      // element.style.width = properties[i][2] + 'px';
 
       //mouse event
       element.addEventListener( 'mousedown', onElementMouseDown, false );
@@ -99,6 +98,7 @@ Physics(function(world){
       });
 
       bodies[i].view = element;
+      bodies[i].view.radius = 60;
     };
 
   } else { //small screen < 480px
@@ -109,7 +109,7 @@ Physics(function(world){
       element.style.position = 'absolute';
       element.style.left = ( - properties[i][2]/2) + 'px'; // will be set by renderer
       element.style.top = ( - properties[i][3]/2) + 'px';
-      element.style.width = properties[i][2] + 'px';
+      // element.style.width = properties[i][2] + 'px';
 
       //mouse event
       element.addEventListener( 'mousedown', onElementMouseDown, false );
@@ -125,8 +125,8 @@ Physics(function(world){
       });
 
       bodies[i].view = element;
+      bodies[i].view.radius = 30;
     };
-
   }
 
   // stop rotation
