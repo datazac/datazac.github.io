@@ -345,10 +345,21 @@ Physics(function(world){
     };
   }
 
-  // stop rotation NOT WORKING
-  // world.on('integrate:positions', function(){
-  //   title.state.angular.pos = 2;
-  // });
+  // stop rotation
+  world.on('integrate:positions', function(){
+    for(var i = 0, l = titleBodies.length; i < l; i++) {
+        titleBodies[i].state.angular.pos = 0;
+    }
+    for(var i = 0, l = rowOneBodies.length; i < l; i++) {
+        rowOneBodies[i].state.angular.pos = 0;
+    }
+    for(var i = 0, l = rowTwoBodies.length; i < l; i++) {
+        rowTwoBodies[i].state.angular.pos = 0;
+    }
+    for(var i = 0, l = rowThreeBodies.length; i < l; i++) {
+        rowThreeBodies[i].state.angular.pos = 0;
+    }
+  });
 
 
   // add the bodies to the world

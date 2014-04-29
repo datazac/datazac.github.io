@@ -129,6 +129,13 @@ Physics(function(world){
 
   }
 
+  // stop rotation
+  world.on('integrate:positions', function(){
+    for(var i = 0, l = bodies.length; i < l; i++) {
+        bodies[i].state.angular.pos = 0;
+    }
+  });
+
   // add the bodies to the world
   world.add( bodies );
 
