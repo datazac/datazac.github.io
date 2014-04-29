@@ -74,7 +74,7 @@ Physics(function(world){
   };
 
   // large screen size
-  if ($(window).width() > 400) {
+  if ($(window).width() > 480) {
 
     for ( var i = 0; i < elements.length; i ++ ) {
       var element = elements[ i ];
@@ -101,7 +101,7 @@ Physics(function(world){
       bodies[i].view = element;
     };
 
-  } else { //small screen < 400px
+  } else { //small screen < 480px
     for ( var i = 0; i < elements.length; i ++ ) {
       var element = elements[ i ];
 

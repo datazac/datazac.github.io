@@ -522,7 +522,7 @@ header {
   }
 }
 
-@media(max-width:400px){
+@media(max-width:480px){
   /*Me*/
   .dot-element-me {
     border-radius: 200px;

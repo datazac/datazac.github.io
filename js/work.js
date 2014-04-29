@@ -75,7 +75,7 @@ Physics(function(world){
   });
 
   // large screen
-  if ($(window).width() > 400) {
+  if ($(window).width() > 480) {
     //get elements
     // title
     titles = getElementsByClass("dot-element-work-title");
@@ -443,8 +443,8 @@ Physics(function(world){
         var project = "barpass";
         var color = "#45345b";
         var position = "Founder & App Director";
-        var textLeft = "During the Toolbox module at Hyper Island, I developed my first real web app. We were asked to create a web app using open data that would improve the lives of the people of Stockholm. Breathr is an app that allows the user to take a break and find the closest beautiful view of the much sought after Stockholm waterfront.";
-        var textRight = "You go to the app, and you can pick from closest view, browse through all the view locations, or even choose an area of the city and it will give you the closest views. I coded and designed the entire app using javascript with weather, map, and direction's apis. We presented this app at and Stockholm Open Data Exibition.";
+        var textLeft = "I founded Barpass with a friend when we saw an opportunity to introduce new customers to bars. As founder, and App Director, I built the original iOS prototype which we showed to our potential customers (bars and alcohol distributors), and then went on to build a team including and an Art Director and two developers (iOS and Android). We built the original iOS app in 6 weeks, working longs nights after our day jobs.";
+        var textRight = "The app allows people to sign up anonymously to events at bars (that we organized), where they can drink for free for an hour. The bar pays us to get people in the door and alcohol companies pay us for advertising in the app. Barpass was an incredible experience of lean and agile development, encompassing both product and service, b2b and b2c.";
 
         dotColor(color);
         workContent(project, position, textLeft, textRight);
@@ -473,8 +473,8 @@ Physics(function(world){
         var project = "screw-sweden";
         var color = "#000000";
         var position = "Team Leader & Code";
-        var textLeft = "As part of the data visualization module, we were given a dataset containing the sex habits of swedes. Using this dataset, I lead a team 3 to create Screw Sweden. Screw Sweden is scrolling info-graphic and questionnaire, designed to look a bit like an ikea catalog. The user goes through the site reading info and answering some provocative questions about sex habits. At the end the users receives a post-card of where they should visit in Sweden that would be";
-        var textRight = "best for their sex habits, based on real data. The team designed and coded the entire site in 10 days, and we presented then we presented to well regarded data journalist. I managed the team, co-developed the quiz matrix, coded the quiz matrix in the app. As result of this work, I was invited to continue working with module leader, Jans Finnas, on data visualization projects outside of the course.";
+        var textLeft = "As part of the data visualization module, we were given a dataset containing the sex habits of swedes. Using this dataset, I lead a team 3 to create Screw Sweden. Screw Sweden is scrolling info-graphic and questionnaire, designed to look a bit like an ikea catalog. The user goes through the site reading info and answering some provocative questions about sex habits. At the end the users receives a post-card of where they should visit in Sweden that would be best for their sex habits,";
+        var textRight = "based on real data. The team designed and coded the entire site in 10 days, and then we presented to a well regarded data journalist. I managed the team, created the storyboard, co-developed the quiz matrix, and coded the quiz matrix in the app. As result of this work, I was invited to continue working with module leader, Jans Finnas, on data visualization projects outside of the course.";
 
         dotColor(color);
         workContent(project, position, textLeft, textRight);
