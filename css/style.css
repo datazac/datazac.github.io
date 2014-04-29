@@ -227,6 +227,14 @@ header {
   color: #7B7D7C;
 }
 
+#warning p {
+  margin-top: 15%;
+  font-weight:700;
+  font-style: normal;
+  font-size: 10px;
+  color: #7B7D7C;
+}
+
 #close-me {
   right: 10px;
   position: absolute;
