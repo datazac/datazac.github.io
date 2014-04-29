@@ -484,7 +484,7 @@ Physics(function(world){
         var project = "screw-sweden";
         var color = "#000000";
         var position = "Team Leader & Code";
-        var textLeft = "As part of the data visualization module, we were given a dataset containing the sex habits of swedes. Using this dataset, I lead a team 3 to create Screw Sweden. Screw Sweden is scrolling info-graphic and questionnaire, designed to look a bit like an ikea catalog. The user goes through the site reading info and answering some provocative questions about sex habits. At the end the users receives a post-card of where they should visit in Sweden that would be best for their sex habits,";
+        var textLeft = "As part of the data visualization module, we were given a dataset containing the sex habits of swedes. Using this dataset, I lead a team of 3 to create Screw Sweden. Screw Sweden is scrolling info-graphic and questionnaire, designed to look a bit like an ikea catalog. The user goes through the site reading info and answering some provocative questions about sex habits. At the end the users receives a post-card of where they should visit in Sweden that would be best for their sex habits,";
         var textRight = "based on real data. The team designed and coded the entire site in 10 days, and then we presented to a well regarded data journalist. I managed the team, created the storyboard, co-developed the quiz matrix, and coded the quiz matrix in the app. As result of this work, I was invited to continue working with module leader, Jans Finnas, on data visualization projects outside of the course.";
 
         dotColor(color);
