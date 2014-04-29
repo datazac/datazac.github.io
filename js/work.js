@@ -626,11 +626,11 @@ Physics(function(world){
     var ctx2 = document.getElementById("work-doughtnut2").getContext("2d");
     new Chart(ctx2).Doughnut(data2,options);
 
-    var ctx1 = document.getElementById("work-doughtnut3").getContext("2d");
-    new Chart(ctx1).Doughnut(data3,options);
+    var ctx3 = document.getElementById("work-doughtnut3").getContext("2d");
+    new Chart(ctx3).Doughnut(data3,options);
 
-    var ctx2 = document.getElementById("work-doughtnut4").getContext("2d");
-    new Chart(ctx2).Doughnut(data4,options);
+    var ctx4 = document.getElementById("work-doughtnut4").getContext("2d");
+    new Chart(ctx4).Doughnut(data4,options);
 
   }
 
