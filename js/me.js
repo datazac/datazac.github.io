@@ -65,6 +65,7 @@ Physics(function(world){
     world.render();
   });
 
+
   //get elements
   elements = getElementsByClass("dot-element-me");
 
@@ -72,31 +73,61 @@ Physics(function(world){
     properties[i] = getElementProperties( elements[i] );
   };
 
-  for ( var i = 0; i < elements.length; i ++ ) {
-    var element = elements[ i ];
+  // large screen size
+  if ($(window).width() > 400) {
+
+    for ( var i = 0; i < elements.length; i ++ ) {
+      var element = elements[ i ];
 
 
-    element.style.position = 'absolute';
-    element.style.left = ( - properties[i][2]/2) + 'px'; // will be set by renderer
-    element.style.top = ( - properties[i][3]/2) + 'px';
-    element.style.width = properties[i][2] + 'px';
+      element.style.position = 'absolute';
+      element.style.left = ( - properties[i][2]/2) + 'px'; // will be set by renderer
+      element.style.top = ( - properties[i][3]/2) + 'px';
+      element.style.width = properties[i][2] + 'px';
 
-    //mouse event
-    element.addEventListener( 'mousedown', onElementMouseDown, false );
-    element.addEventListener( 'mouseup', onElementMouseUp, false );
+      //mouse event
+      element.addEventListener( 'mousedown', onElementMouseDown, false );
+      element.addEventListener( 'mouseup', onElementMouseUp, false );
 
-    bodies[i] = Physics.body('circle', {
-      x: viewWidth/2,
-      y: 200,
-      radius: 60,
-      mass: 1.5,
-      vx: random(-5, 5)/100,
-      vy: 0.15
-    });
+      bodies[i] = Physics.body('circle', {
+        x: viewWidth/2,
+        y: 200,
+        radius: 60,
+        mass: 1.5,
+        vx: random(-5, 5)/100,
+        vy: 0.15
+      });
 
-    bodies[i].view = element;
+      bodies[i].view = element;
+    };
 
-  };
+  } else { //small screen < 400px
+    for ( var i = 0; i < elements.length; i ++ ) {
+      var element = elements[ i ];
+
+
+      element.style.position = 'absolute';
+      element.style.left = ( - properties[i][2]/2) + 'px'; // will be set by renderer
+      element.style.top = ( - properties[i][3]/2) + 'px';
+      element.style.width = properties[i][2] + 'px';
+
+      //mouse event
+      element.addEventListener( 'mousedown', onElementMouseDown, false );
+      element.addEventListener( 'mouseup', onElementMouseUp, false );
+
+      bodies[i] = Physics.body('circle', {
+        x: viewWidth/2,
+        y: 200,
+        radius: 30,
+        mass: 1.5,
+        vx: random(-5, 5)/100,
+        vy: 0.15
+      });
+
+      bodies[i].view = element;
+    };
+
+  }
 
   // add the bodies to the world
   world.add( bodies );
