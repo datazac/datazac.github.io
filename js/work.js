@@ -500,7 +500,7 @@ Physics(function(world){
         var color = "#44a8c8";
         var position = "Project Manager & VP University Relations";
         var textLeft = "My experience working in the web. I was lucky enough to get an opportunity at this start-up on my return from Rio de Janeiro. I began as an unpaid intern and when I left a year and half later, I was lead project manager. I was the first non-technical full time employee. I worked side by side everyday with the founders. Jobbook still attempts to change the face of online recruiting, and while I was there we were totally bootstrapped.";
-        var textRight = "I worked on everything from project management, cold-calling, pitching, running a Wordpress news blog, social media management, and leading a team of more than 50 university ambassadors across North America. This is where I realized to I wanted to work in digital products and that I need to learn some coe and creative tools, and where I was when I first applied for Hyper Island.";
+        var textRight = "I worked on everything from project management, cold-calling, pitching, running a Wordpress news blog, social media management, and leading a team of more than 50 university ambassadors across North America. This is where I realized I wanted to work with digital products and that I need to learn some code and creative tools to better work with devs.";
 
         dotColor(color);
         workContent(project, position, textLeft, textRight);
@@ -514,7 +514,7 @@ Physics(function(world){
         var project = "sos-barnbyar";
         var color = "#f47822";
         var position = "Motivator, Strategy & Pitching";
-        var textLeft = "This was the first brief at Hyper Island. I worked in a team of 3 to develop the future of charitable fundraising. We came up with a concept to create a charitable link shortener so adds could be played while the page is loading and the charity recieves the funds. In 48 hours, we developed the concept and created a 1 minute video.";
+        var textLeft = "This was the first brief at Hyper Island. I worked in a team of 3 to develop the future of charitable fundraising. We came up with a concept to create a charitable link shortener so Ads could be played while the page is loading and then the charity receives the funds. In 48 hours, we developed the concept and created a 1 minute video.";
         var textRight = "I pitched the idea to the SOS Barnbyar team. During this brief I helped develop the concept, prune ideas, and direct the movie's storyboard in order to meet the deadline to do a killer pitch.";
 
         dotColor(color);
