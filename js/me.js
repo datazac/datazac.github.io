@@ -98,7 +98,6 @@ Physics(function(world){
       });
 
       bodies[i].view = element;
-      bodies[i].view.radius = 60;
     };
 
   } else { //small screen < 480px
@@ -125,7 +124,6 @@ Physics(function(world){
       });
 
       bodies[i].view = element;
-      bodies[i].view.radius = 30;
     };
   }
 

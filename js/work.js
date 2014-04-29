@@ -210,7 +210,7 @@ Physics(function(world){
       rowThreeBodies[i].view = rowThree;
     };
 
-  } else { // small screen < 400px
+  } else { // small screen < 480px
 
     titles = getElementsByClass("dot-element-work-title");
 
@@ -376,7 +376,7 @@ Physics(function(world){
   world.add( Physics.behavior('body-impulse-response') );
 
   // add gravity
-  world.add( Physics.behavior('constant-acceleration') );
+  // world.add( Physics.behavior('constant-acceleration') );
 
   // body collision
   world.add( Physics.behavior('body-collision-detection', { checkAll: false }) );
