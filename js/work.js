@@ -409,8 +409,8 @@ Physics(function(world){
         var project = "lego";
         var color = "#ffff00";
         var position = "Concept & Pitching";
-        var textLeft = "I was selected as one of 30 students to participate in a 48 hour hackathon with LEGO in Aaarhus, Denmark, as part of brief for LEGO Future Labs on the future of toys. The participants were selected from Hyper Island and Kaos Pilots schools. I worked with a team of 3 on a toy concept.";
-        var textRight = "We worked closely with the senior designers at Future labs to create the concept and then at end of the 48 hours, I pitched the concept to a panel including the Future Lab team and on of Lego's VP's. This was an exciting brief which included concept development, design prototyping, defining the user journey, and pitching.";
+        var textLeft = "I was selected as one of 30 students to participate in a 48 hour hackathon with LEGO in Aaarhus, Denmark, as part of brief for LEGO Future Labs on the future of toys. The participants were selected from Hyper Island and Kaos Pilots schools. I worked with a team of 3 on a new toy concept.";
+        var textRight = "We worked closely with the senior designers at Future labs to create the concept and then at end of the 48 hours, I pitched the concept to a panel including the Future Lab team and one of Lego's VP's. This was an exciting brief which included concept development, design prototyping, defining the user journey, and pitching.";
 
         dotColor(color);
         workContent(project, position, textLeft, textRight);
@@ -424,7 +424,7 @@ Physics(function(world){
         var project = "coke";
         var color = "#f80000";
         var position = "Team Leader, Concept & Copy";
-        var textLeft = "Coca-Cola came to Hyper Island and payed the entire school to work on a brief for 72 hours. Working as lead of a team of three, I came up with a concept/platform which we developed a pitch for and presented to the Coke's swedish marketing team. The concept was very good: “it connected all the dots”. We pitched again several weeks later to an entire boardroom of marketing execs from across Europe.";
+        var textLeft = "Coca-Cola came to Hyper Island so the entire school could work on a brief for 72 hours. Working as lead of a team of three, I came up with a concept/platform which we developed a pitch for and presented to Coke's swedish marketing team. The concept was very good: “it connected all the dots”. We pitched again several weeks later to an entire boardroom of marketing execs from across Europe.";
         var textRight = "Our concept came in first place out of 38 teams and is actively in development at coke. This brief involved concept development, business strategies, market segmentation, purchase mechanisms, copy-writing, bleeding-edge technologies, and pitching.";
 
         dotColor(color);
@@ -439,8 +439,8 @@ Physics(function(world){
         var project = "halebop";
         var color = "#a62169";
         var position = "Strategy & Pitching";
-        var textLeft = "During our second client module in the Digital Data Strategist program at Hyper Island, I worked on a brief for Halebop, a friendlier yournger brother of Telia, one of Sweden's largest telecoms. In a team of 5, responsible for leading ideation sessions and pitching, we worked with Halebop's CMO, and the CEO of their agency of record, Honesty, to deliver a service that would improve the efficiency of their marketing spend.";
-        var textRight = "Gathering insights from their marketing data, we created a digital strategy that would improve how they directed potential customer's to their site and acquired customers. The CMO was extremely happy with the results, and is implementing the strategy.";
+        var textLeft = "During our second client module in the Digital Data Strategist program at Hyper Island, I worked on a brief for Halebop, the friendlier younger brother of Telia, one of Sweden's largest telecoms. In a team of 5, responsible for leading ideation sessions and pitching, we worked with Halebop's CMO, and the CEO of their agency of record, Honesty, to deliver a service that would improve the efficiency of their marketing spend.";
+        var textRight = "Gathering insights from their marketing data, we created a digital strategy that would improve how they directed potential customer's to their site and acquired new customers. The CMO was extremely happy with the results and is implementing the strategy.";
 
         dotColor(color);
         workContent(project, position, textLeft, textRight);
@@ -470,7 +470,7 @@ Physics(function(world){
         var color = "#31485f";
         var position = "Concept, Design & Code";
         var textLeft = "During the Toolbox module at Hyper Island, I developed my first real web app. We were asked to create a web app using open data that would improve the lives of the people of Stockholm. Breathr is an app that allows the user to take a break and find the closest beautiful view of the much sought after Stockholm waterfront.";
-        var textRight = "You go to the app, and you can pick from closest view, browse through all the view locations, or even choose an area of the city and it will give you the closest views. I coded and designed the entire app using javascript with weather, map, and direction's apis. We presented this app at and Stockholm Open Data Exhibition.";
+        var textRight = "You go to the app, and you can pick from closest view, browse through all the view locations, or even choose an area of the city and it will give you the closest view near you. I coded and designed the entire app using javascript with weather, map, and direction's apis. We presented this app at the Stockholm Open Data Exhibition.";
 
         dotColor(color);
         workContent(project, position, textLeft, textRight);
