@@ -325,7 +325,6 @@ header {
     transition: opacity 0.1s ease-in;
 }
 
-
 /*exceptions*/
 #sos-barnbyar {
   padding-top: 35px;
@@ -610,16 +609,6 @@ header {
     color: #fff;
   }
 
-  .hover-state {
-      opacity: 1;
-      border-radius: 200px;
-      width: 60px;
-      height: 60px;
-      margin:0px;
-      padding-top:25px;
-      text-align: center;
-  }
-
   /* work */
   .dot-element-work-title, .dot-element-work-row-one, .dot-element-work-row-two, .dot-element-work-row-three  {
     width: 60px;
@@ -657,6 +646,43 @@ header {
     font-style: italic;
     font-size: 10px;
     color: #fff;
+  }
+
+  .hover-state-work {
+    opacity: 1;
+    border-radius: 200px;
+    width: 60px;
+    height: 60px;
+    margin:0px;
+    padding-top:25px;
+    text-align: center;
+  }
+
+  /*exceptions*/
+  #sos-barnbyar {
+    padding-top: 15px;
+  }
+
+  #screw-sweden {
+    padding-top: 15px;
+  }
+
+  .xyz {
+    width: 100%;
+    padding-top: 0em;
+    padding-bottom: 0em;
+  }
+
+  .xyz.left {
+    padding-left: 1em;
+    padding-right: 1em;
+    float: none;
+  }
+
+  .xyz.right {
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
   }
 }
 

@@ -526,7 +526,7 @@ Physics(function(world){
         var values = [75, 70, 60, 50];
         var project = "sos-barnbyar";
         var color = "#f47822";
-        var position = "Motivator, Strategy & Pitching";
+        var position = "Strategy, Pitching & Motivator";
         var textLeft = "This was the first brief at Hyper Island. I worked in a team of 3 to develop the future of charitable fundraising. We came up with a concept to create a charitable link shortener so Ads could be played while the page is loading and then the charity receives the funds. In 48 hours, we developed the concept and created a 1 minute video.";
         var textRight = "I pitched the idea to the SOS Barnbyar team. During this brief I helped develop the concept, prune ideas, and direct the movie's storyboard in order to meet the deadline to do a killer pitch.";
 
