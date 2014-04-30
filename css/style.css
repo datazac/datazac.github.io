@@ -412,16 +412,20 @@ header {
 
 .xyz {
   width: 49%;
-  padding: 1em;
-  padding-top: 0.5em;
+  padding-top: 1em;
+  padding-bottom: 1em;
   text-align: justify;
 }
 
 .xyz.left {
+  padding-right:0.1em;
+  padding-left: 1em;
   float: left;
 }
 
 .xyz.right {
+  padding-right: 1em;
+  padding-left: 0.1em;
   float: right;
 }
 
@@ -431,7 +435,8 @@ header {
   font-family: "adelle",sans-serif;
   font-weight:300;
   font-style: normal;
-  font-size: 15px;
+  font-size: 12.5px;
+  line-height: 21px;
   color: #7B7D7C;
 }
 
