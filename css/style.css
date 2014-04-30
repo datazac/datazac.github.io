@@ -77,6 +77,10 @@ header {
   cursor: pointer;
 }
 
+.start-stop:hover {
+  color: #7B7D7C;
+}
+
 .container {
 
 }
@@ -296,19 +300,39 @@ header {
   color: #fff;
 }
 
-.dot-element-work-row-one:hover > .hover-state {
+.hover-state-work {
+    opacity: 0;
+    border-radius: 200px;
+    width: 120px;
+    height: 120px;
+    margin:0px;
+    padding-top:45px;
+    text-align: center;
+}
+
+.dot-element-work-row-one:hover > .hover-state-work {
     opacity: 1;
     transition: opacity 0.1s ease-in;
 }
 
-.dot-element-work-row-two:hover > .hover-state {
+.dot-element-work-row-two:hover > .hover-state-work {
     opacity: 1;
     transition: opacity 0.1s ease-in;
 }
 
-.dot-element-work-row-three:hover > .hover-state {
+.dot-element-work-row-three:hover > .hover-state-work {
     opacity: 1;
     transition: opacity 0.1s ease-in;
+}
+
+
+/*exceptions*/
+#sos-barnbyar {
+  padding-top: 35px;
+}
+
+#screw-sweden {
+  padding-top: 35px;
 }
 
 /* end of dots*/
@@ -392,7 +416,7 @@ header {
 
 .role {
   width: 100%;
-  margin-top: 0em;
+  margin-top: 2em;
   padding: 1.0em;
   text-align: center;
 }

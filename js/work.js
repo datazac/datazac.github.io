@@ -45,6 +45,11 @@ Physics(function(world){
       }
   });
 
+  //hover color play pause
+  // $('.start-stop').hover(function(){
+  //   $(this).toggleClass("hover-color");
+  // });
+
   // render to dom
   var renderer = Physics.renderer('dom', {
     el: 'work-canvas',
@@ -404,21 +409,23 @@ Physics(function(world){
 
     if ( event.target == document.getElementById( 'lego' ) ) {
 
+        var id = "#lego";
         var skills = ['Concept', 'Pitching', 'UI', 'Team'];
         var values = [80, 75, 60, 50];
         var project = "lego";
-        var color = "#ffff00";
+        var color = "#ffcc00";
         var position = "Concept & Pitching";
         var textLeft = "I was selected as one of 30 students to participate in a 48 hour hackathon with LEGO in Aaarhus, Denmark, as part of brief for LEGO Future Labs on the future of toys. The participants were selected from Hyper Island and Kaos Pilots schools. I worked with a team of 3 on a new toy concept.";
         var textRight = "We worked closely with the senior designers at Future labs to create the concept and then at end of the 48 hours, I pitched the concept to a panel including the Future Lab team and one of Lego's VP's. This was an exciting brief which included concept development, design prototyping, defining the user journey, and pitching.";
 
-        dotColor(color);
+        dotColor(id, color);
         workContent(project, position, textLeft, textRight);
         workChart(skills, values, color);
         openContent();
     }
     if ( event.target == document.getElementById( 'coke' ) ) {
 
+        var id = "#coke";
         var skills = ['Strategy', 'Branding', 'UX', 'Pitching'];
         var values = [90, 75, 50, 50];
         var project = "coke";
@@ -427,13 +434,14 @@ Physics(function(world){
         var textLeft = "Coca-Cola came to Hyper Island so the entire school could work on a brief for 72 hours. Working as lead of a team of three, I came up with a concept/platform which we developed a pitch for and presented to Coke's swedish marketing team. The concept was very good: “it connected all the dots”. We pitched again several weeks later to an entire boardroom of marketing execs from across Europe.";
         var textRight = "Our concept came in first place out of 38 teams and is actively in development at coke. This brief involved concept development, business strategies, market segmentation, purchase mechanisms, copy-writing, bleeding-edge technologies, and pitching.";
 
-        dotColor(color);
+        dotColor(id, color);
         workContent(project, position, textLeft, textRight);
         workChart(skills, values, color);
         openContent();
     }
     if ( event.target == document.getElementById( 'halebop' ) ) {
 
+        var id = "#halebop";
         var skills = ['Digital Marketing', 'Data', 'UX', 'Pitching'];
         var values = [90, 70, 60, 50];
         var project = "halebop";
@@ -442,13 +450,14 @@ Physics(function(world){
         var textLeft = "During our second client module in the Digital Data Strategist program at Hyper Island, I worked on a brief for Halebop, the friendlier younger brother of Telia, one of Sweden's largest telecoms. In a team of 5, responsible for leading ideation sessions and pitching, we worked with Halebop's CMO, and the CEO of their agency of record, Honesty, to deliver a service that would improve the efficiency of their marketing spend.";
         var textRight = "Gathering insights from their marketing data, we created a digital strategy that would improve how they directed potential customer's to their site and acquired new customers. The CMO was extremely happy with the results and is implementing the strategy.";
 
-        dotColor(color);
+        dotColor(id, color);
         workContent(project, position, textLeft, textRight);
         workChart(skills, values, color);
         openContent();
     }
     if ( event.target == document.getElementById( 'barpass' ) ) {
 
+        var id = "#barpass";
         var skills = ['Founder', 'PM', 'UX', 'Design'];
         var values = [100, 90, 80, 60];
         var project = "barpass";
@@ -457,13 +466,14 @@ Physics(function(world){
         var textLeft = "I founded Barpass with a friend when we saw an opportunity to introduce new customers to bars. As founder, and App Director, I built the original iOS prototype which we showed to our potential customers (bars and alcohol distributors), and then went on to build a team including and an Art Director and two developers (iOS and Android). We built the original iOS app in 6 weeks, working longs nights after our day jobs.";
         var textRight = "The app allows people to sign up anonymously to events at bars (that we organized), where they can drink for free for an hour. The bar pays us to get people in the door and alcohol companies pay us for advertising in the app. Barpass was an incredible experience of lean and agile development, encompassing both product and service, b2b and b2c.";
 
-        dotColor(color);
+        dotColor(id, color);
         workContent(project, position, textLeft, textRight);
         workChart(skills, values, color);
         openContent();
     }
     if ( event.target == document.getElementById( 'breathr' ) ) {
 
+        var id = "#breathr";
         var skills = ['Code', 'Design', 'UX', 'API'];
         var values = [100, 85, 80, 80];
         var project = "breathr";
@@ -472,13 +482,14 @@ Physics(function(world){
         var textLeft = "During the Toolbox module at Hyper Island, I developed my first real web app. We were asked to create a web app using open data that would improve the lives of the people of Stockholm. Breathr is an app that allows the user to take a break and find the closest beautiful view of the much sought after Stockholm waterfront.";
         var textRight = "You go to the app, and you can pick from closest view, browse through all the view locations, or even choose an area of the city and it will give you the closest view near you. I coded and designed the entire app using javascript with weather, map, and direction's apis. We presented this app at the Stockholm Open Data Exhibition.";
 
-        dotColor(color);
+        dotColor(id, color);
         workContent(project, position, textLeft, textRight);
         workChart(skills, values, color);
         openContent();
     }
     if ( event.target == document.getElementById( 'screw-sweden' ) ) {
 
+        var id = "#screw-sweden";
         var skills = ['PM', 'Code', 'Data', 'Ux'];
         var values = [90, 80, 80, 70];
         var project = "screw-sweden";
@@ -487,13 +498,14 @@ Physics(function(world){
         var textLeft = "As part of the data visualization module, we were given a dataset containing the sex habits of swedes. Using this dataset, I lead a team of 3 to create Screw Sweden. Screw Sweden is scrolling info-graphic and questionnaire, designed to look a bit like an ikea catalog. The user goes through the site reading info and answering some provocative questions about sex habits. At the end the users receive a post-card of where they should visit in Sweden that would be best for their sex habits,";
         var textRight = "based on real data. The team designed and coded the entire site in 10 days, and then we presented to a well regarded data journalist. I managed the team, created the storyboard, co-developed the quiz matrix, and coded the quiz matrix in the app. As result of this work, I was invited to continue working with module leader, Jans Finnas, on data visualization projects outside of the course.";
 
-        dotColor(color);
+        dotColor(id, color);
         workContent(project, position, textLeft, textRight);
         workChart(skills, values, color);
         openContent();
     }
     if ( event.target == document.getElementById( 'jobbook' ) ) {
 
+        var id = "#jobbook";
         var skills = ['PM', 'Customer Service', 'Strategy', 'UX'];
         var values = [80, 75, 50, 30];
         var project = "jobbook";
@@ -502,13 +514,14 @@ Physics(function(world){
         var textLeft = "My experience working in the web. I was lucky enough to get an opportunity at this start-up on my return from Rio de Janeiro. I began as an unpaid intern and when I left a year and half later, I was lead project manager. I was the first non-technical full time employee. I worked side by side everyday with the founders. Jobbook still attempts to change the face of online recruiting, and while I was there we were totally bootstrapped.";
         var textRight = "I worked on everything from project management, cold-calling, pitching, running a Wordpress news blog, social media management, and leading a team of more than 50 university ambassadors across North America. This is where I realized I wanted to work with digital products and that I need to learn some code and creative tools to better work with devs.";
 
-        dotColor(color);
+        dotColor(id, color);
         workContent(project, position, textLeft, textRight);
         workChart(skills, values, color);
         openContent();
     }
     if ( event.target == document.getElementById( 'sos-barnbyar' ) ) {
 
+        var id = "#sos-barnbyar";
         var skills = ['PM', 'Pitching', 'UX', 'Concept'];
         var values = [75, 70, 60, 50];
         var project = "sos-barnbyar";
@@ -517,7 +530,7 @@ Physics(function(world){
         var textLeft = "This was the first brief at Hyper Island. I worked in a team of 3 to develop the future of charitable fundraising. We came up with a concept to create a charitable link shortener so Ads could be played while the page is loading and then the charity receives the funds. In 48 hours, we developed the concept and created a 1 minute video.";
         var textRight = "I pitched the idea to the SOS Barnbyar team. During this brief I helped develop the concept, prune ideas, and direct the movie's storyboard in order to meet the deadline to do a killer pitch.";
 
-        dotColor(color);
+        dotColor(id ,color);
         workContent(project, position, textLeft, textRight);
         workChart(skills, values, color);
         openContent();
@@ -532,26 +545,30 @@ Physics(function(world){
   // close
   $('#close-work-bottom').click(function() {
     var color = "#B3B8B6";
-
     $('.work-container').removeClass('open');
 
-    dotColor(color);
-  })
+    dotColor(null, color);
+   })
 
-  $('#close-work-top').click(function() {
+   $('#close-work-top').click(function() {
     var color = "#B3B8B6";
-
     $('.work-container').removeClass('open');
 
-    dotColor(color);
-  })
+    dotColor(null, color);
+   })
 
 // Change dot color
-  function dotColor(color) {
+  function dotColor(id, color) {
+    //bg color
     $('.dot-element-work-title').animate({ 'background-color': color }, 400);
     $('.dot-element-work-row-one').animate({ 'background-color': color }, 400);
     $('.dot-element-work-row-two').animate({ 'background-color': color }, 400);
     $('.dot-element-work-row-three').animate({ 'background-color': color }, 400);
+
+    //text opacity
+    $(id).animate({ 'opacity': 1 }, 400);
+
+    //buttons
     $('.start-stop').animate({ 'color': color }, 400);
     $('#close-work-bottom').css('background-color', color);
     $('#close-work-top').css('background-color', color);
@@ -577,38 +594,38 @@ Physics(function(world){
 
     // Chart Data
     var data1 = [{
-            value: reverseVal(value[0]),
-            color: "#fff"
-        }, {
             value: value[0],
             color: color
+        }, {
+            value: reverseVal(value[0]),
+            color: "#fff"
         }
     ]
 
     var data2 = [{
-            value: reverseVal(value[1]),
-            color: "#fff"
-        }, {
             value: value[1],
             color: color
+        }, {
+            value: reverseVal(value[1]),
+            color: "#fff"
         }
     ]
 
     var data3 = [{
-            value: reverseVal(value[2]),
-            color: "#fff"
-        }, {
             value: value[2],
             color: color
+        }, {
+            value: reverseVal(value[2]),
+            color: "#fff"
         }
     ]
 
     var data4 = [{
-            value: reverseVal(value[3]),
-            color: "#fff"
-        }, {
             value: value[3],
             color: color
+        }, {
+            value: reverseVal(value[3]),
+            color: "#fff"
         }
     ]
 
