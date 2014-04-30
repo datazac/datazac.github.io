@@ -427,7 +427,7 @@ Physics(function(world){
 
         var id = "#coke";
         var skills = ['Strategy', 'Branding', 'UX', 'Pitching'];
-        var values = [90, 75, 50, 50];
+        var values = [90, 75, 70, 60];
         var project = "coke";
         var color = "#f80000";
         var position = "Team Leader, Concept & Copy";
