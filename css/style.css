@@ -153,6 +153,8 @@ header {
     transition: opacity 0.1s ease-in;
 }
 
+/*CONTENT*/
+
 .me-container {
   width:50%;
   height:100%;
@@ -230,6 +232,11 @@ header {
   color: #7B7D7C;
 }
 
+.social img {
+  padding-top: 0.5em;
+  width: 40px;
+}
+
 #warning p {
   font-family: "adelle",sans-serif;
   font-weight:300;
@@ -252,6 +259,9 @@ header {
   text-align: left;
   cursor: pointer;
 }
+
+
+
 
 /* ------  WORK ----- */
 
