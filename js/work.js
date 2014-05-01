@@ -446,7 +446,7 @@ Physics(function(world){
         var values = [90, 70, 60, 50];
         var project = "halebop";
         var color = "#a62169";
-        var position = "Strategy & Pitching";
+        var position = "Strategy, UX & Pitching";
         var textLeft = "During our second client module in the Digital Data Strategist program at Hyper Island, I worked on a brief for Halebop, the friendlier younger brother of Telia, one of Sweden's largest telecoms. In a team of 5, responsible for leading ideation sessions and pitching, we worked with Halebop's CMO, and the CEO of their agency of record, Honesty, to deliver a service that would improve the efficiency of their marketing spend.";
         var textRight = "Gathering insights from their marketing data, we created a digital strategy that would improve how they directed potential customer's to their site and acquired new customers. The CMO was extremely happy with the results and is implementing the strategy.";
 
