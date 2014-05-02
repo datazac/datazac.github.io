@@ -25,6 +25,10 @@ Physics(function(world){
   var rowThrees = [];
   var rowThreeBodies = [];
 
+  //chart vars
+  var chartWidth;
+  var chartHeight;
+
   // constrain objects to these bounds
   var edgeBounce = Physics.behavior('edge-collision-detection', {
       aabb: viewportBounds,
@@ -79,276 +83,148 @@ Physics(function(world){
     world.render();
   });
 
-  // large screen
-  if ($(window).width() > 480) {
-    //get elements
-    // title
-    titles = getElementsByClass("dot-element-work-title");
+  //CREATE MOVING DOTS
 
-    for ( var i = 0; i < titles.length; i ++ ) {
-      properties[i] = getElementProperties( titles[i] );
-    };
-
-    for ( var i = 0; i < titles.length; i ++ ) {
-      var title = titles[ i ];
-
-
-      title.style.position = 'absolute';
-      title.style.left = ( - properties[i][2]/2) + 'px'; // will be set by renderer
-      title.style.top = ( - properties[i][3]/2) + 'px';
-      // title.style.width = properties[i][2] + 'px';
-
-      //mouse event
-      title.addEventListener( 'mousedown', onElementMouseDown, false );
-      title.addEventListener( 'mouseup', onElementMouseUp, false );
-
-      titleBodies[i] = Physics.body('circle', {
-        x: viewWidth/2,
-        y: 200,
-        radius: 60,
-        mass: 1.0,
-        // gravity part
-        vx: random(-5, 5)/100,
-        vy: 0.15
-      });
-
-      titleBodies[i].view = title;
-
-    };
-
-    // row 1
-    rowOnes = getElementsByClass("dot-element-work-row-one");
-
-    for ( var i = 0; i < rowOnes.length; i ++ ) {
-      properties[i] = getElementProperties( rowOnes[i] );
-    };
-
-    for ( var i = 0; i < rowOnes.length; i ++ ) {
-      var rowOne = rowOnes[ i ];
-
-      rowOne.style.position = 'absolute';
-      rowOne.style.left = ( - properties[i][2]/2) + 'px'; // will be set by renderer
-      rowOne.style.top = ( - properties[i][3]/2) + 'px';
-      // rowOne.style.width = properties[i][2] + 'px';
-
-      //mouse event
-      rowOne.addEventListener( 'mousedown', onElementMouseDown, false );
-      rowOne.addEventListener( 'mouseup', onElementMouseUp, false );
-
-      rowOneBodies[i] = Physics.body('circle', {
-        x: viewWidth/2,
-        y: 200,
-        radius: 60,
-        mass: 1.0,
-        // gravity part
-        vx: random(-5, 5)/100,
-        vy: 0.15
-      });
-
-      rowOneBodies[i].view = rowOne;
-
-    };
-
-    // row 2
-    rowTwos = getElementsByClass("dot-element-work-row-two");
-
-    for ( var i = 0; i < rowTwos.length; i ++ ) {
-      properties[i] = getElementProperties( rowTwos[i] );
-    };
-
-    for ( var i = 0; i < rowTwos.length; i ++ ) {
-      var rowTwo = rowTwos[ i ];
-
-      rowTwo.style.position = 'absolute';
-      rowTwo.style.left = ( - properties[i][2]/2) + 'px'; // will be set by renderer
-      rowTwo.style.top = ( - properties[i][3]/2) + 'px';
-      // rowTwo.style.width = properties[i][2] + 'px';
-
-      //mouse event
-      rowTwo.addEventListener( 'mousedown', onElementMouseDown, false );
-      rowTwo.addEventListener( 'mouseup', onElementMouseUp, false );
-
-      rowTwoBodies[i] = Physics.body('circle', {
-        x: viewWidth/2,
-        y: 350,
-        radius: 60,
-        mass: 1.0,
-        // gravity part
-        vx: random(-5, 5)/100,
-        vy: 0.15
-      });
-
-      rowTwoBodies[i].view = rowTwo;
-
-    };
-
-    // row 3
-
-    rowThrees = getElementsByClass("dot-element-work-row-three");
-
-    for ( var i = 0; i < rowThrees.length; i ++ ) {
-      properties[i] = getElementProperties( rowThrees[i] );
-    };
-
-    for ( var i = 0; i < rowThrees.length; i ++ ) {
-      var rowThree = rowThrees[ i ];
-
-      rowThree.style.position = 'absolute';
-      rowThree.style.left = ( - properties[i][2]/2) + 'px'; // will be set by renderer
-      rowThree.style.top = ( - properties[i][3]/2) + 'px';
-      // rowThree.style.width = properties[i][2] + 'px';
-
-      //mouse event
-      rowThree.addEventListener( 'mousedown', onElementMouseDown, false );
-      rowThree.addEventListener( 'mouseup', onElementMouseUp, false );
-
-      rowThreeBodies[i] = Physics.body('circle', {
-        x: viewWidth/2,
-        y: 500,
-        radius: 60,
-        mass: 1.0,
-        // gravity part
-        vx: random(-5, 5)/100,
-        vy: 0.15
-      });
-
-      rowThreeBodies[i].view = rowThree;
-    };
-
+  // dot radius
+  if ($(window).width() > 960) { // large screen
+    var radius = 60;
+  } else if ($(window).width() <= 960 && $(window).width() > 480) { // retina landscape
+    var radius = 45;
   } else { // small screen < 480px
+    var radius = 30;
+  };
 
-    titles = getElementsByClass("dot-element-work-title");
+  titles = getElementsByClass("dot-element-work-title");
 
-    for ( var i = 0; i < titles.length; i ++ ) {
-      properties[i] = getElementProperties( titles[i] );
-    };
+  for ( var i = 0; i < titles.length; i ++ ) {
+    properties[i] = getElementProperties( titles[i] );
+  };
 
-    for ( var i = 0; i < titles.length; i ++ ) {
-      var title = titles[ i ];
+  for ( var i = 0; i < titles.length; i ++ ) {
+    var title = titles[ i ];
 
 
-      title.style.position = 'absolute';
-      title.style.left = ( - properties[i][2]/2) + 'px'; // will be set by renderer
-      title.style.top = ( - properties[i][3]/2) + 'px';
-      // title.style.width = properties[i][2] + 'px';
+    title.style.position = 'absolute';
+    title.style.left = ( - properties[i][2]/2) + 'px'; // will be set by renderer
+    title.style.top = ( - properties[i][3]/2) + 'px';
+    // title.style.width = properties[i][2] + 'px';
 
-      //mouse event
-      title.addEventListener( 'mousedown', onElementMouseDown, false );
-      title.addEventListener( 'mouseup', onElementMouseUp, false );
+    //mouse event
+    title.addEventListener( 'mousedown', onElementMouseDown, false );
+    title.addEventListener( 'mouseup', onElementMouseUp, false );
 
-      titleBodies[i] = Physics.body('circle', {
-        x: viewWidth/2,
-        y: 200,
-        radius: 30,
-        mass: 1.0,
-        // gravity part
-        vx: random(-5, 5)/100,
-        vy: 0.15
-      });
+    titleBodies[i] = Physics.body('circle', {
+      x: viewWidth/2,
+      y: 200,
+      radius: radius,
+      mass: 1.0,
+      // gravity part
+      vx: random(-5, 5)/100,
+      vy: 0.15
+    });
 
-      titleBodies[i].view = title;
+    titleBodies[i].view = title;
 
-    };
+  };
 
-    // row 1
-    rowOnes = getElementsByClass("dot-element-work-row-one");
+  // row 1
+  rowOnes = getElementsByClass("dot-element-work-row-one");
 
-    for ( var i = 0; i < rowOnes.length; i ++ ) {
-      properties[i] = getElementProperties( rowOnes[i] );
-    };
+  for ( var i = 0; i < rowOnes.length; i ++ ) {
+    properties[i] = getElementProperties( rowOnes[i] );
+  };
 
-    for ( var i = 0; i < rowOnes.length; i ++ ) {
-      var rowOne = rowOnes[ i ];
+  for ( var i = 0; i < rowOnes.length; i ++ ) {
+    var rowOne = rowOnes[ i ];
 
-      rowOne.style.position = 'absolute';
-      rowOne.style.left = ( - properties[i][2]/2) + 'px'; // will be set by renderer
-      rowOne.style.top = ( - properties[i][3]/2) + 'px';
-      // rowOne.style.width = properties[i][2] + 'px';
+    rowOne.style.position = 'absolute';
+    rowOne.style.left = ( - properties[i][2]/2) + 'px'; // will be set by renderer
+    rowOne.style.top = ( - properties[i][3]/2) + 'px';
+    // rowOne.style.width = properties[i][2] + 'px';
 
-      //mouse event
-      rowOne.addEventListener( 'mousedown', onElementMouseDown, false );
-      rowOne.addEventListener( 'mouseup', onElementMouseUp, false );
+    //mouse event
+    rowOne.addEventListener( 'mousedown', onElementMouseDown, false );
+    rowOne.addEventListener( 'mouseup', onElementMouseUp, false );
 
-      rowOneBodies[i] = Physics.body('circle', {
-        x: viewWidth/2,
-        y: 200,
-        radius: 30,
-        mass: 1.0,
-        // gravity part
-        vx: random(-5, 5)/100,
-        vy: 0.15
-      });
+    rowOneBodies[i] = Physics.body('circle', {
+      x: viewWidth/2,
+      y: 200,
+      radius: radius,
+      mass: 1.0,
+      // gravity part
+      vx: random(-5, 5)/100,
+      vy: 0.15
+    });
 
-      rowOneBodies[i].view = rowOne;
+    rowOneBodies[i].view = rowOne;
 
-    };
+  };
 
-    // row 2
-    rowTwos = getElementsByClass("dot-element-work-row-two");
+  // row 2
+  rowTwos = getElementsByClass("dot-element-work-row-two");
 
-    for ( var i = 0; i < rowTwos.length; i ++ ) {
-      properties[i] = getElementProperties( rowTwos[i] );
-    };
+  for ( var i = 0; i < rowTwos.length; i ++ ) {
+    properties[i] = getElementProperties( rowTwos[i] );
+  };
 
-    for ( var i = 0; i < rowTwos.length; i ++ ) {
-      var rowTwo = rowTwos[ i ];
+  for ( var i = 0; i < rowTwos.length; i ++ ) {
+    var rowTwo = rowTwos[ i ];
 
-      rowTwo.style.position = 'absolute';
-      rowTwo.style.left = ( - properties[i][2]/2) + 'px'; // will be set by renderer
-      rowTwo.style.top = ( - properties[i][3]/2) + 'px';
-      // rowTwo.style.width = properties[i][2] + 'px';
+    rowTwo.style.position = 'absolute';
+    rowTwo.style.left = ( - properties[i][2]/2) + 'px'; // will be set by renderer
+    rowTwo.style.top = ( - properties[i][3]/2) + 'px';
+    // rowTwo.style.width = properties[i][2] + 'px';
 
-      //mouse event
-      rowTwo.addEventListener( 'mousedown', onElementMouseDown, false );
-      rowTwo.addEventListener( 'mouseup', onElementMouseUp, false );
+    //mouse event
+    rowTwo.addEventListener( 'mousedown', onElementMouseDown, false );
+    rowTwo.addEventListener( 'mouseup', onElementMouseUp, false );
 
-      rowTwoBodies[i] = Physics.body('circle', {
-        x: viewWidth/2,
-        y: 350,
-        radius: 30,
-        mass: 1.0,
-        // gravity part
-        vx: random(-5, 5)/100,
-        vy: 0.15
-      });
+    rowTwoBodies[i] = Physics.body('circle', {
+      x: viewWidth/2,
+      y: 350,
+      radius: radius,
+      mass: 1.0,
+      // gravity part
+      vx: random(-5, 5)/100,
+      vy: 0.15
+    });
 
-      rowTwoBodies[i].view = rowTwo;
+    rowTwoBodies[i].view = rowTwo;
 
-    };
+  };
 
-    // row 3
+  // row 3
 
-    rowThrees = getElementsByClass("dot-element-work-row-three");
+  rowThrees = getElementsByClass("dot-element-work-row-three");
 
-    for ( var i = 0; i < rowThrees.length; i ++ ) {
-      properties[i] = getElementProperties( rowThrees[i] );
-    };
+  for ( var i = 0; i < rowThrees.length; i ++ ) {
+    properties[i] = getElementProperties( rowThrees[i] );
+  };
 
-    for ( var i = 0; i < rowThrees.length; i ++ ) {
-      var rowThree = rowThrees[ i ];
+  for ( var i = 0; i < rowThrees.length; i ++ ) {
+    var rowThree = rowThrees[ i ];
 
-      rowThree.style.position = 'absolute';
-      rowThree.style.left = ( - properties[i][2]/2) + 'px'; // will be set by renderer
-      rowThree.style.top = ( - properties[i][3]/2) + 'px';
-      // rowThree.style.width = properties[i][2] + 'px';
+    rowThree.style.position = 'absolute';
+    rowThree.style.left = ( - properties[i][2]/2) + 'px'; // will be set by renderer
+    rowThree.style.top = ( - properties[i][3]/2) + 'px';
+    // rowThree.style.width = properties[i][2] + 'px';
 
-      //mouse event
-      rowThree.addEventListener( 'mousedown', onElementMouseDown, false );
-      rowThree.addEventListener( 'mouseup', onElementMouseUp, false );
+    //mouse event
+    rowThree.addEventListener( 'mousedown', onElementMouseDown, false );
+    rowThree.addEventListener( 'mouseup', onElementMouseUp, false );
 
-      rowThreeBodies[i] = Physics.body('circle', {
-        x: viewWidth/2,
-        y: 500,
-        radius: 30,
-        mass: 1.0,
-        // gravity part
-        vx: random(-5, 5)/100,
-        vy: 0.15
-      });
+    rowThreeBodies[i] = Physics.body('circle', {
+      x: viewWidth/2,
+      y: 500,
+      radius: radius,
+      mass: 1.0,
+      // gravity part
+      vx: random(-5, 5)/100,
+      vy: 0.15
+    });
 
-      rowThreeBodies[i].view = rowThree;
-    };
-  }
+    rowThreeBodies[i].view = rowThree;
+  };
 
   // stop rotation
   world.on('integrate:positions', function(){
@@ -365,6 +241,8 @@ Physics(function(world){
         rowThreeBodies[i].state.angular.pos = 0;
     }
   });
+
+  //end of dot creation
 
 
   // add the bodies to the world
@@ -637,29 +515,42 @@ Physics(function(world){
      animationEasing : "easeOutQuad"
     };
 
-    var chartWidth = "60";
-    var chartHeight = "60";
+    // render canvas charts
+    chartWidth = 60;
+    chartHeight = 60;
+
+
+    // change chart size based on screen width
+    // if ($(window).width() > 480) {
+    //   chartWidth = 60;
+    //   chartHeight = 60;
+    // } else {
+    //   chartWidth = 40;
+    //   chartHeight = 40;
+    // };
 
     var ctx1 = document.getElementById("work-doughtnut1").getContext("2d");
     new Chart(ctx1).Doughnut(data1,options);
     ctx1.canvas.width= chartWidth;
     ctx1.canvas.height= chartHeight;
 
+
     var ctx2 = document.getElementById("work-doughtnut2").getContext("2d");
     new Chart(ctx2).Doughnut(data2,options);
     ctx2.canvas.width= chartWidth;
     ctx2.canvas.height= chartHeight;
+
 
     var ctx3 = document.getElementById("work-doughtnut3").getContext("2d");
     new Chart(ctx3).Doughnut(data3,options);
     ctx3.canvas.width= chartWidth;
     ctx3.canvas.height= chartHeight;
 
+
     var ctx4 = document.getElementById("work-doughtnut4").getContext("2d");
     new Chart(ctx4).Doughnut(data4,options);
     ctx4.canvas.width= chartWidth;
     ctx4.canvas.height= chartHeight;
-
   }
 
   // Work Content

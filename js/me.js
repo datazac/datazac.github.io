@@ -65,6 +65,16 @@ Physics(function(world){
     world.render();
   });
 
+  //CREATE ME DOTS
+
+  // dot radius
+  if ($(window).width() > 960) { // large screen
+    var radius = 60;
+  } else if ($(window).width() <= 960 && $(window).width() > 480) { // retina landscape
+    var radius = 45;
+  } else { // small screen < 480px
+    var radius = 30;
+  };
 
   //get elements
   elements = getElementsByClass("dot-element-me");
@@ -73,59 +83,29 @@ Physics(function(world){
     properties[i] = getElementProperties( elements[i] );
   };
 
-  // large screen size
-  if ($(window).width() > 480) {
+  for ( var i = 0; i < elements.length; i ++ ) {
+    var element = elements[ i ];
 
-    for ( var i = 0; i < elements.length; i ++ ) {
-      var element = elements[ i ];
+    element.style.position = 'absolute';
+    element.style.left = ( - properties[i][2]/2) + 'px'; // will be set by renderer
+    element.style.top = ( - properties[i][3]/2) + 'px';
+    // element.style.width = properties[i][2] + 'px';
 
-      element.style.position = 'absolute';
-      element.style.left = ( - properties[i][2]/2) + 'px'; // will be set by renderer
-      element.style.top = ( - properties[i][3]/2) + 'px';
-      // element.style.width = properties[i][2] + 'px';
+    //mouse event
+    element.addEventListener( 'mousedown', onElementMouseDown, false );
+    element.addEventListener( 'mouseup', onElementMouseUp, false );
 
-      //mouse event
-      element.addEventListener( 'mousedown', onElementMouseDown, false );
-      element.addEventListener( 'mouseup', onElementMouseUp, false );
+    bodies[i] = Physics.body('circle', {
+      x: viewWidth/2,
+      y: 200,
+      radius: radius,
+      mass: 1.0,
+      vx: random(-5, 5)/100,
+      vy: 0.15
+    });
 
-      bodies[i] = Physics.body('circle', {
-        x: viewWidth/2,
-        y: 200,
-        radius: 60,
-        mass: 1.0,
-        vx: random(-5, 5)/100,
-        vy: 0.15
-      });
-
-      bodies[i].view = element;
-    };
-
-  } else { //small screen < 480px
-    for ( var i = 0; i < elements.length; i ++ ) {
-      var element = elements[ i ];
-
-
-      element.style.position = 'absolute';
-      element.style.left = ( - properties[i][2]/2) + 'px'; // will be set by renderer
-      element.style.top = ( - properties[i][3]/2) + 'px';
-      // element.style.width = properties[i][2] + 'px';
-
-      //mouse event
-      element.addEventListener( 'mousedown', onElementMouseDown, false );
-      element.addEventListener( 'mouseup', onElementMouseUp, false );
-
-      bodies[i] = Physics.body('circle', {
-        x: viewWidth/2,
-        y: 200,
-        radius: 30,
-        mass: 1.0,
-        vx: random(-5, 5)/100,
-        vy: 0.15
-      });
-
-      bodies[i].view = element;
-    };
-  }
+    bodies[i].view = element;
+  };
 
   // stop rotation
   world.on('integrate:positions', function(){
@@ -133,6 +113,8 @@ Physics(function(world){
         bodies[i].state.angular.pos = 0;
     }
   });
+
+  //end of dot creation
 
   // add the bodies to the world
   world.add( bodies );
