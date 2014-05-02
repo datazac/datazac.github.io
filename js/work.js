@@ -446,7 +446,7 @@ Physics(function(world){
         var values = [90, 70, 60, 50];
         var project = "halebop";
         var color = "#a62169";
-        var position = "Strategy, UX & Pitching";
+        var position = "Strategy, UX, & Pitching";
         var textLeft = "During our second client module in the Digital Data Strategist program at Hyper Island, I worked on a brief for Halebop, the friendlier younger brother of Telia, one of Sweden's largest telecoms. In a team of 5, responsible for leading ideation sessions and pitching, we worked with Halebop's CMO, and the CEO of their agency of record, Honesty, to deliver a service that would improve the efficiency of their marketing spend.";
         var textRight = "Gathering insights from their marketing data, we created a digital strategy that would improve how they directed potential customer's to their site and acquired new customers. The CMO was extremely happy with the results and is implementing the strategy.";
 
@@ -637,17 +637,28 @@ Physics(function(world){
      animationEasing : "easeOutQuad"
     };
 
+    var chartWidth = "60";
+    var chartHeight = "60";
+
     var ctx1 = document.getElementById("work-doughtnut1").getContext("2d");
     new Chart(ctx1).Doughnut(data1,options);
+    ctx1.canvas.width= chartWidth;
+    ctx1.canvas.height= chartHeight;
 
     var ctx2 = document.getElementById("work-doughtnut2").getContext("2d");
     new Chart(ctx2).Doughnut(data2,options);
+    ctx2.canvas.width= chartWidth;
+    ctx2.canvas.height= chartHeight;
 
     var ctx3 = document.getElementById("work-doughtnut3").getContext("2d");
     new Chart(ctx3).Doughnut(data3,options);
+    ctx3.canvas.width= chartWidth;
+    ctx3.canvas.height= chartHeight;
 
     var ctx4 = document.getElementById("work-doughtnut4").getContext("2d");
     new Chart(ctx4).Doughnut(data4,options);
+    ctx4.canvas.width= chartWidth;
+    ctx4.canvas.height= chartHeight;
 
   }
 
