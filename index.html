@@ -37,13 +37,13 @@
         <h1 class="second">Especially the big ones</h1>
       </div> -->
       <p class="tag">Connecting The Dots</p>
-      <div href="#" class="buttons start-stop">pause</div>
+      <div href="#" class="buttons start-stop" id="pause-play">pause</div>
     </header>
     <div class="container">
 
       <section id="me-canvas">
-        <div class="dot-element-me big">
-          <h1 class="title" id="me">Me</h1>
+        <div class="dot-element-me big" data-virtual-view="/virtual/me">
+          <h1 class="title" id="me" data-virtual-view="/virtual/me">Me</h1>
         </div>
         <!-- <div class="dot-element-me small">
           <h1 class="hover-state" id="curiosity">Curiosity</h1>
@@ -61,28 +61,28 @@
           <h1 class="title">Work</h1>
         </div>
         <div class="dot-element-work-row-one" id="lego-bg">
-          <h1 class="hover-state-work" id="lego">LEGO</h1>
+          <h1 class="hover-state-work" id="lego" data-virtual-view="/virtual/lego">LEGO</h1>
         </div>
         <div class="dot-element-work-row-one" id="coke-bg">
-          <h1 class="hover-state-work" id="coke">Coca-Cola</h1>
+          <h1 class="hover-state-work" id="coke" data-virtual-view="/virtual/coke">Coca-Cola</h1>
         </div>
         <div class="dot-element-work-row-two" id="halebop-bg">
-          <h1 class="hover-state-work" id="halebop">Halebop</h1>
+          <h1 class="hover-state-work" id="halebop" data-virtual-view="/virtual/halebop">Halebop</h1>
         </div>
         <div class="dot-element-work-row-two" id="barpass-bg">
-          <h1 class="hover-state-work" id="barpass">Barpass</h1>
+          <h1 class="hover-state-work" id="barpass" data-virtual-view="/virtual/barpass">Barpass</h1>
         </div>
         <div class="dot-element-work-row-two" id="breathr-bg">
-          <h1 class="hover-state-work" id="breathr">Breathr</h1>
+          <h1 class="hover-state-work" id="breathr" data-virtual-view="/virtual/breathr">Breathr</h1>
         </div>
         <div class="dot-element-work-row-three" id="screw-sweden-bg">
-          <h1 class="hover-state-work" id="screw-sweden">Screw Sweden</h1>
+          <h1 class="hover-state-work" id="screw-sweden" data-virtual-view="/virtual/screw-sweden">Screw Sweden</h1>
         </div>
         <div class="dot-element-work-row-three" id="jobbook-bg">
-          <h1 class="hover-state-work" id="jobbook">Jobbook</h1>
+          <h1 class="hover-state-work" id="jobbook" data-virtual-view="/virtual/jobbook">Jobbook</h1>
         </div>
         <div class="dot-element-work-row-three" id="sos-barnbyar-bg">
-          <h1 class="hover-state-work" id="sos-barnbyar">SOS Barnybar</h1>
+          <h1 class="hover-state-work" id="sos-barnbyar" data-virtual-view="/virtual/sos-barnbyar">SOS Barnybar</h1>
         </div>
       </section>
 
@@ -158,17 +158,15 @@
                 <p>t: +46739543454</p>
               </div>
               <div class="social">
-                <a href="https://github.com/rolz" target="_blank"><img src="assets/logos/github.png"></a>
-                <a href="http://se.linkedin.com/pub/zac-rolland/38/95a/ab3/" target="_blank"><img src="assets/logos/linkedin.png"></a>
-                <a href="skype:zacrolz?call"><img src="assets/logos/skype.png"></a>
-                <a href="https://twitter.com/zacrolz" target="_blank"><img src="assets/logos/twitter.png"></a>
+                <a href="https://github.com/rolz" target="_blank"><img src="assets/logos/github.png" data-virtual-view="/virtual/github"></a>
+                <a href="http://se.linkedin.com/pub/zac-rolland/38/95a/ab3/" target="_blank"><img src="assets/logos/linkedin.png" data-virtual-view="/virtual/linked-in"></a>
+                <a href="skype:zacrolz?call"><img src="assets/logos/skype.png" data-virtual-view="/virtual/skype"></a>
+                <a href="https://twitter.com/zacrolz" target="_blank"><img src="assets/logos/twitter.png" data-virtual-view="/virtual/twitter"></a>
               </div>
               <div id="warning">
                 <p>*work in progress</p>
               </div>
             </div>
-            <!-- <p id="close-me">close</p> -->
-
         </div>
 
 
@@ -186,7 +184,7 @@
       <script src="js/mouse-events.js"></script>
 
       <!--App JS-->
-      <!-- <script type="text/jsx" src="js/components.js"></script> -->
+      <script type="text/jsx" src="js/tracking.js"></script>
       <script src="js/me.js"></script>
       <script src="js/work.js"></script>
 
