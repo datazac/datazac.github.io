@@ -389,7 +389,7 @@ Physics(function(world){
         var project = "jobbook";
         var color = "#44a8c8";
         var position = "Project Manager & VP University Relations";
-        var textLeft = "My experience working in the web. I was lucky enough to get an opportunity at this start-up on my return from Rio de Janeiro. I began as an unpaid intern and when I left a year and half later, I was lead project manager. I was the first non-technical full time employee. I worked side by side everyday with the founders. Jobbook still attempts to change the face of online recruiting, and while I was there we were totally bootstrapped.";
+        var textLeft = "My  first experience working in the web. I was lucky enough to get an opportunity at this start-up on my return from Rio de Janeiro. I began as an unpaid intern and when I left a year and half later, I was lead project manager. I was the first non-technical full time employee. I worked side by side everyday with the founders. Jobbook still attempts to change the face of online recruiting, and while I was there we were totally bootstrapped.";
         var textRight = "I worked on everything from project management, cold-calling, pitching, running a Wordpress news blog, social media management, and leading a team of more than 50 university ambassadors across North America. This is where I realized I wanted to work with digital products and that I need to learn some code and creative tools to better work with devs.";
 
         dotColor(id, color);
